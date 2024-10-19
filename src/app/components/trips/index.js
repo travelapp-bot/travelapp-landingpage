@@ -27,7 +27,7 @@ const Trips = () => {
         <h1 className="title64">Tag us on your trips</h1>
         <p className="desc24">
           Lorem Ipsum is simply dummy text of the printing and typesetting
-          industry. Lorem Ipsum has been the industry's standard dummy text{" "}
+          industry. Lorem Ipsum has been the industry&apos;s standard dummy text{" "}
         </p>
       </div>
       <div className={styles.btnStack}>
