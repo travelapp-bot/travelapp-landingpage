@@ -1,0 +1,43 @@
+.header {
+  padding: 6.25rem 5.125rem;
+  border-radius: 1.5rem;
+  background-color: var(--success-dark);
+  color: var(--background);
+  .row {
+    .content {
+      h1 {
+        font-size: 4.5rem;
+        font-weight: 700;
+        line-height: 6.875rem;
+        .starIcon {
+          margin-bottom: 2rem;
+        }
+      }
+      p {
+        font-size: 1.75rem;
+        font-weight: 400;
+        max-width: 80%;
+        margin-top: 1.75rem;
+        margin-bottom: 5rem;
+      }
+      .btnStack {
+        display: flex;
+        align-items: center;
+        gap: 2rem;
+        .socialBtns {
+          display: flex;
+          gap: 1rem;
+          span {
+            font-size: 1.125rem;
+            line-height: 1.125rem;
+            color: var(--light);
+          }
+        }
+      }
+    }
+    .banner {
+      height: 100%;
+      width: 100%;
+    }
+  }
+}

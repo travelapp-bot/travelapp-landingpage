@@ -1,0 +1,192 @@
+:root {
+  --background: #ffffff;
+  --foreground: #000000;
+  --info: #4b4b4b;
+  --info-dark: #1f1f1f;
+  --primary: #dff7ff;
+  --warning: #fff5cd;
+  --light: #fafafa;
+  --success: #86c68a;
+  --success-dark: #69b56d;
+  --success-light: #e0fbe7;
+  --border-light: #EEEEEE;
+}
+
+html,
+body {
+  max-width: 100vw;
+  overflow-x: hidden;
+}
+
+body {
+  color: var(--foreground);
+  background: var(--background);
+  font-family: Arial, Helvetica, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin-bottom: 0;
+}
+
+/*-------------- CONTAINER --------------*/
+.container {
+  @media (min-width: 1620px) {
+    max-width: 1550px;
+  }
+}
+/*-------------- CONTAINER --------------*/
+/*-------------- VARIABLE CLASSES --------------*/
+.title64 {
+  font-size: 4rem;
+  line-height: 6rem;
+  font-weight: 600;
+  color: var(--info-dark);
+}
+
+.title48 {
+  font-size: 3rem;
+  line-height: 4.5rem;
+  font-weight: 600;
+  color: var(--info-dark);
+}
+
+.title28 {
+  font-size: 1.75rem;
+  line-height: 2.675rem;
+  font-weight: 600;
+  color: var(--foreground);
+}
+
+.title26 {
+  font-size: 1.575rem;
+  line-height: 2.375rem;
+  font-weight: 600;
+  color: var(--foreground);
+}
+
+.title24 {
+  font-size: 1.5rem;
+  line-height: 2.25rem;
+  font-weight: 600;
+  color: var(--info-dark);
+}
+
+.desc28 {
+  font-size: 1.75rem;
+  line-height: 2.675rem;
+  font-weight: 400;
+  color: var(--info-dark);
+}
+
+.desc24 {
+  font-size: 1.5rem;
+  line-height: 2.25rem;
+  font-weight: 400;
+  color: var(--info);
+}
+
+.desc21 {
+  font-size: 1.375rem;
+  line-height: 2rem;
+  font-weight: 400;
+  color: var(--info);
+}
+
+.desc16 {
+  font-size: 1rem;
+  line-height: 1.5rem;
+  font-weight: 500;
+  color: var(--info);
+}
+
+/*-------------- VARIABLE CLASSES --------------*/
+
+/*-------------- NAVBAR --------------*/
+.navbar {
+  padding: 2.5rem 0;
+  .container {
+    .navbar-brand {
+      font-size: 3rem;
+      font-weight: 500;
+      line-height: 140%;
+      color: var(--foreground);
+      padding: 0;
+    }
+    .navbar-nav {
+      .nav-link {
+        font-size: 1.75rem;
+        font-weight: 500;
+        color: var(--info-dark);
+        padding: 0 1rem;
+      }
+    }
+  }
+}
+
+/*-------------- NAVBAR --------------*/
+
+/*-------------- APP BUTTON --------------*/
+.app-icon-btn {
+  min-height: 50px;
+  min-width: 50px;
+  height: 50px;
+  width: 50px;
+  padding: 0.5rem;
+  border-radius: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: none;
+  .btn-icon {
+    height: 100%;
+    width: 100%;
+    object-fit: contain;
+  }
+}
+
+.app-insta-btn {
+  background: linear-gradient(
+    45deg,
+    #faad4f 14.61%,
+    #dd2a7b 39.38%,
+    #9537b0 58.49%,
+    #515bd4 85.39%
+  );
+}
+
+.app-btn {
+  height: 62px;
+  min-width: 244px;
+  border-radius: 31px;
+  font-size: 1.75rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  column-gap: 0.675rem;
+  font-weight: 500;
+}
+.btn-success {
+  background-color: var(--success-dark);
+  border-color: var(--success-dark);
+}
+
+/*-------------- APP BUTTON --------------*/

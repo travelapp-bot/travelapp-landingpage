@@ -1,0 +1,10 @@
+.page {
+  .main {
+    display: flex;
+    flex-direction: column;
+    row-gap: 6rem;
+  }
+  .footerSec{
+    background-color: var(--success-light);
+  }
+}
