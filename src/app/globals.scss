@@ -9,7 +9,23 @@
   --success: #86c68a;
   --success-dark: #69b56d;
   --success-light: #e0fbe7;
-  --border-light: #EEEEEE;
+  --border-light: #eeeeee;
+}
+
+html {
+  font-size: 100%;
+  @media screen and (max-width: 1620px) {
+    font-size: 85%;
+  }
+  @media screen and (max-width: 1440px) {
+    font-size: 75%;
+  }
+  @media screen and (max-width: 1200px) {
+    font-size: 65%;
+  }
+  @media screen and (max-width: 992px) {
+    font-size: 52%;
+  }
 }
 
 html,
@@ -132,6 +148,12 @@ p {
       padding: 0;
     }
     .navbar-nav {
+      @media screen and (max-width: 991.9px) {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        row-gap: 0.5rem;
+      }
       .nav-link {
         font-size: 1.75rem;
         font-weight: 500;
@@ -139,17 +161,117 @@ p {
         padding: 0 1rem;
       }
     }
+    .app-navbar-btn {
+      @media screen and (max-width: 991.9px) {
+        margin: 0 auto;
+      }
+    }
   }
 }
-
 /*-------------- NAVBAR --------------*/
+/*-------------- MODAL --------------*/
+.modal-dialog {
+  width: 690px;
+  max-width: 690px;
+  @media screen and (max-width: 767.9px) {
+    width: 90%;
+  }
+  @media screen and (max-width: 576px) {
+    width: 95%;
+    max-width: fit-content;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .modal-content {
+    border-radius: 1.5rem;
+    .modal-header {
+      border-bottom: none;
+      padding: 20px;
+      .btn-close {
+        font-size: 20px;
+        color: var(--foreground);
+      }
+    }
+    .modal-body {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      row-gap: 24px;
+      padding: 1rem 6.25rem 3.75rem;
+      @media screen and (max-width: 576px) {
+        padding: 0 8% 8%;
+      }
+      .modal-img{
+        height: auto;
+        width: 100px;
+        object-fit: contain;
+        margin-bottom: 12px;
+        @media screen and (max-width: 767.9px) {
+          font-size: 26px;
+        }
+      }
+      .modal-title-stack {
+        text-align: center;
+        h1 {
+          font-size: 30px;
+          font-weight: 700;
+          margin-bottom: 8px;
+          @media screen and (max-width: 767.9px) {
+            font-size: 26px;
+          }
+        }
+        p {
+          font-size: 18px;
+          font-weight: 400;
+          color: var(--info);
+          @media screen and (max-width: 767.9px) {
+            font-size: 14px;
+          }
+        }
+      }
+      .modal-btn {
+        height: 58px;
+        border-radius: 0.675rem;
+        font-size: 24px;
+        min-width: 187px;
+        margin-top: 44px;
+        @media screen and (max-width: 767.9px) {
+          height: 48px;
+          font-size: 18px;
+        }
+      }
+      form {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        .input-stack {
+          row-gap: 16px;
+          .form-label {
+            font-size: 14px;
+            line-height: 20px;
+            font-weight: 400;
+            color: var(--info);
+            margin-bottom: 0.375rem;
+          }
+          .form-control-lg {
+            font-size: 16px;
+            color: var(--foreground);
+            min-height: 44px;
+            padding: 8px 14px;
+          }
+        }
+      }
+    }
+  }
+}
+/*-------------- MODAL --------------*/
 
 /*-------------- APP BUTTON --------------*/
 .app-icon-btn {
-  min-height: 50px;
-  min-width: 50px;
-  height: 50px;
-  width: 50px;
+  min-height: 3.125rem;
+  min-width: 3.125rem;
+  height: 3.125rem;
+  width: 3.125rem;
   padding: 0.5rem;
   border-radius: 100%;
   display: flex;
@@ -174,15 +296,24 @@ p {
 }
 
 .app-btn {
-  height: 62px;
+  height: 3.875rem;
   min-width: 244px;
   border-radius: 31px;
   font-size: 1.75rem;
+  line-height: 1.125rem;
   display: flex;
   align-items: center;
   justify-content: center;
   column-gap: 0.675rem;
   font-weight: 500;
+  .app-btn-icon {
+    height: auto;
+    width: 1.75rem;
+    object-fit: contain;
+  }
+  @media screen and (max-width: 768px) {
+    min-width: 200px;
+  }
 }
 .btn-success {
   background-color: var(--success-dark);

@@ -16,7 +16,7 @@ const AppNavbar = () => {
             <Nav.Link href="#action2">How it works</Nav.Link>
             <Nav.Link href="#action2">Blogs</Nav.Link>
           </Nav>
-          <AppButton icon>Join Waitlist</AppButton>
+          <AppButton icon className="app-navbar-btn">Join Waitlist</AppButton>
         </Navbar.Collapse>
       </Container>
     </Navbar>

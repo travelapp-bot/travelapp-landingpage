@@ -14,14 +14,13 @@ const Advanture = () => {
       <Image
         src={starsG}
         alt="Everything you need for your next adventure"
-        height={56}
-        width={56}
+        className={styles.starsImg}
       />
       <h1 className="title64">
         Everything you need <br /> for your next adventure
       </h1>
       <Row className={styles.row}>
-        <Col xs={6}>
+        <Col xs={12} sm={6}>
           <AdvantureCard
             {...{
               title: "Photos, maps & reviews",
@@ -30,7 +29,7 @@ const Advanture = () => {
             }}
           />
         </Col>
-        <Col xs={6}>
+        <Col xs={12} sm={6}>
           <AdvantureCard
             {...{
               title: "Customizable trip plans",
@@ -40,7 +39,7 @@ const Advanture = () => {
             imgClassName="ms-auto"
           />
         </Col>
-        <Col xs={4}>
+        <Col xs={12} sm={6} md={4}>
           <AdvantureCard
             {...{
               title: "Popular itineraries",
@@ -49,7 +48,7 @@ const Advanture = () => {
             }}
           />
         </Col>
-        <Col xs={4}>
+        <Col xs={12} sm={6} md={4}>
           <AdvantureCard
             {...{
               title: "Your trip with AI",
@@ -58,7 +57,7 @@ const Advanture = () => {
             }}
           />
         </Col>
-        <Col xs={4}>
+        <Col xs={12} sm={6} md={4}>
           <WishlistCard />
         </Col>
       </Row>

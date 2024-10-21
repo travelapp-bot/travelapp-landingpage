@@ -10,7 +10,7 @@ const RoadMap = () => {
   return (
     <div className={styles.roadmap}>
       <Row className={styles.row}>
-        <Col xs={5}>
+        <Col xs={{order: 2, span:  12}} sm={{order: 1, span: 6}} md={5}>
           <div className={styles.content}>
             <h1 className="title48">
               Tell us what <br /> you love
@@ -23,7 +23,7 @@ const RoadMap = () => {
             </p>
           </div>
         </Col>
-        <Col xs={5}>
+        <Col xs={{order: 1, span:  12}} sm={{order: 2, span: 6}} md={5}>
           <Image
             className={styles.banner}
             src={roadmap1}
@@ -32,14 +32,14 @@ const RoadMap = () => {
         </Col>
       </Row>
       <Row className={styles.row}>
-        <Col xs={6}>
+        <Col xs={12} sm={6} md={6}>
           <Image
             className={styles.banner}
             src={roadmap2}
             alt="Your perfect trip, HandPicked for your’s"
           />
         </Col>
-        <Col xs={5}>
+        <Col xs={12} sm={6} md={5}>
           <div className={styles.content}>
             <h1 className="title48">
               Your perfect trip, HandPicked for your’s
@@ -53,7 +53,7 @@ const RoadMap = () => {
         </Col>
       </Row>
       <Row className={styles.row}>
-        <Col xs={5}>
+        <Col xs={{order: 2, span:  12}} sm={{order: 1, span: 6}} md={5}>
           <div className={styles.content}>
             <h1 className="title48">
               All your trip plans, <br /> in one place
@@ -65,7 +65,7 @@ const RoadMap = () => {
             </p>
           </div>
         </Col>
-        <Col xs={5}>
+        <Col xs={{order: 1, span:  12}} sm={{order: 2, span: 6}} md={5}>
           <Image
             className={styles.banner}
             src={roadmap3}

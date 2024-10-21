@@ -12,17 +12,17 @@ const Footer = () => {
   return (
     <footer className={styles.footer}>
       <Row className={styles.stack}>
-        <Col xs={3}>
+        <Col xs={12} sm={3}>
           <h1>Travel.ai</h1>
         </Col>
-        <Col xs={6}>
+        <Col xs={12} sm={6}>
           <div className={styles.links}>
             <Link href="#">Home</Link>
             <Link href="#">How it works</Link>
             <Link href="#">Blogs</Link>
           </div>
         </Col>
-        <Col xs={3}>
+        <Col xs={12} sm={3}>
           <div className={styles.socialBtns}>
             <IconButton img={facebook} alt="Facebook" />
             <IconButton

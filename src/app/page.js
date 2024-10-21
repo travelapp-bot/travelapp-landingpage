@@ -9,6 +9,7 @@ import Advanture from "./components/advanture";
 import Trips from "./components/trips";
 import Footer from "./components/footer";
 import ReadMore from "./components/readMore";
+import classNames from "classnames";
 
 export default function Home() {
   return (
@@ -17,21 +18,14 @@ export default function Home() {
       <Container>
         <main className={styles.main}>
           <Header />
-          <Row className="align-items-end">
-            <Col xs={4}>
+          <Row className={classNames("align-items-end", styles.textStack)}>
+            <Col xs={12} md={5} xxl={4}>
               <h1 className="title64">
                 Here is <br /> How it works{" "}
-                <Image
-                  className={styles.starIcon}
-                  src={starsG}
-                  alt="stars"
-                  width={57}
-                  height={57}
-                  priority
-                />
+                <Image className={styles.starIcon} src={starsG} alt="stars" />
               </h1>
             </Col>
-            <Col xs={8}>
+            <Col xs={12} md={7} xxl={8}>
               <p className="desc28 ps-4">
                 Lorem Ipsum is simply dummy text of the printing and typesetting
                 industry. Lorem Ipsum has been the industry's standard dummy
@@ -41,9 +35,9 @@ export default function Home() {
           </Row>
           <RoadMap />
           <Advanture />
-          <ReadMore />
         </main>
       </Container>
+      <ReadMore />
       <div className={styles.footerSec}>
         <Container>
           <Trips />
