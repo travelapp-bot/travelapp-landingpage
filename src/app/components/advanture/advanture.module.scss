@@ -1,8 +1,19 @@
 .advanture {
+  @media screen and (max-width: 767.9px) {
+    text-align: center;
+  }
+  .starsImg{
+    height: auto;
+    width: 3.5rem;
+    object-fit: contain;
+  }
   .row {
     display: flex;
     flex-direction: row;
     row-gap: 5rem;
     margin-top: 8.75rem;
+    @media screen and (max-width: 768px) {
+      row-gap: 2rem;
+    }
   }
 }

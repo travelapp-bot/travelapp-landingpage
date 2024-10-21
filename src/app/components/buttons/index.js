@@ -8,11 +8,12 @@ export const IconButton = ({
   img,
   alt,
   className,
-  size = "50px",
+  size = "3.125rem",
+  onClick,
   props,
 }) => {
   const btnSize = size === "xs" ? "32px" : size;
-  const btnPadding = size === "xs" ? "6px" : "10px";
+  const btnPadding = size === "xs" ? "6px" : "0.675rem";
 
   return (
     <Button
@@ -26,6 +27,7 @@ export const IconButton = ({
         minWidth: btnSize,
         padding: btnPadding,
       }}
+      onClick={onClick}
     >
       <Image
         className="btn-icon"
@@ -36,11 +38,11 @@ export const IconButton = ({
   );
 };
 
-const AppButton = ({ icon = false, variant = "success", children, props }) => {
+const AppButton = ({ icon = false, variant = "success", children, className, onClick, ...props }) => {
   return (
-    <Button variant={variant} {...props} className="app-btn">
+    <Button variant={variant} {...props} className={classNames(className, "app-btn")} onClick={onClick}>
       {icon && (
-        <Image src={logo} alt="Next.js logo" width={24} height={24} priority />
+        <Image src={logo} alt="Next.js logo" className="app-btn-icon" />
       )}
       {children}
     </Button>
