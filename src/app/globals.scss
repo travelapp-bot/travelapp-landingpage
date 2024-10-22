@@ -170,10 +170,16 @@ p {
         font-weight: 500;
         color: var(--info-dark);
         padding: 0 1rem;
+        &:hover {
+          color: var(--success-dark);
+        }
         @media screen and (max-width: 991.9px) {
           font-size: 3.75rem;
           font-weight: 600;
         }
+      }
+      .nav-link.active{
+        color: var(--success-dark);
       }
     }
     .app-navbar-btn {
@@ -352,27 +358,53 @@ p {
 
 /*-------------- APP BUTTON --------------*/
 /*-------------- SLICK SLIDER --------------*/
+// .slick-list {
+//   overflow: visible; // This allows partial slides to be visible
+// }
+
+.slick-track {
+  left: 19%;
+  @media screen and (max-width: 767.9px) {
+    left: 32%;
+  }
+  @media screen and (max-width: 480px) {
+    left: 0;
+  }
+}
 .slick-arrow {
   top: auto;
-  bottom: -40px;
+  bottom: -80px;
   right: 0;
-  height: 28px;
-  width: 28px;
+  height: 54px;
+  width: 54px;
   z-index: 10;
+  @media screen and (max-width: 767.9px) {
+    height: 44px;
+    width: 44px;
+  }
 }
 .slick-prev {
-  right: 40px;
+  right: 80px;
   left: auto;
+  @media screen and (max-width: 767.9px) {
+    right: 60px;
+  }
   &::before {
-    font-size: 24px;
+    font-size: 44px;
     color: var(--success-dark);
+    @media screen and (max-width: 767.9px) {
+      font-size: 34px;
+    }
   }
 }
 .slick-next {
   right: 10px;
   &::before {
-    font-size: 24px;
+    font-size: 44px;
     color: var(--success-dark);
+    @media screen and (max-width: 767.9px) {
+      font-size: 34px;
+    }
   }
 }
 .slick-dots {

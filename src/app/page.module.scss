@@ -1,5 +1,7 @@
 .page {
+  overflow-x: hidden;
   .main {
+    overflow-x: hidden;
     display: flex;
     flex-direction: column;
     row-gap: 6rem;

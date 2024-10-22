@@ -14,7 +14,7 @@ const AppNavbar = () => {
           <Nav className="mx-auto my-2 my-lg-0">
             <Nav.Link href="#action1">Home</Nav.Link>
             <Nav.Link href="#action2">How it works</Nav.Link>
-            <Nav.Link href="#action2">Blogs</Nav.Link>
+            <Nav.Link href="#action3">Blogs</Nav.Link>
             <AppButton icon className="app-navbar-btn d-lg-none">
               Join Waitlist
             </AppButton>

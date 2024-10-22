@@ -9,25 +9,27 @@ import { ReadMoreCard } from "../cards";
 import styles from "./readMore.module.scss";
 import Slider from "react-slick";
 
-
 const ReadMore = () => {
   var settings = {
     dots: false,
     infinite: true,
     slidesToShow: 2.5,
     slidesToScroll: 1,
+    // autoplay: true,
+    // autoplaySpeed: 2000,
+    rtl: true,
     responsive: [
       {
         breakpoint: 1024,
         settings: {
-          slidesToShow: 3,
+          slidesToShow: 2.5,
           slidesToScroll: 1,
         },
       },
       {
-        breakpoint: 600,
+        breakpoint: 767.9,
         settings: {
-          slidesToShow: 2,
+          slidesToShow: 1.5,
           slidesToScroll: 1,
         },
       },
