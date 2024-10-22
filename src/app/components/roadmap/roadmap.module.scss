@@ -5,6 +5,9 @@
     @media screen and (max-width: 767.9px) {
       margin-bottom: 2rem;
     }
+    @media screen and (max-width: 575.9px) {
+      margin-bottom: 3rem;
+    }
     .content {
       display: flex;
       flex-direction: column;
@@ -13,9 +16,20 @@
         text-align: center;
       }
     }
-    .banner{
+    .banner {
       height: auto;
-        width: 100%;
+      width: 100%;
+      @media screen and (max-width: 575.9px) {
+        width: 80%;
+        margin: 0 auto;
+        display: block;
+      }
+    }
+  }
+  .spacing {
+    margin-top: 3rem;
+    @media screen and (max-width: 575.9px) {
+      margin-top: 5rem;
     }
   }
 }

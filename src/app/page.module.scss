@@ -1,8 +1,11 @@
 .page {
+  overflow-x: hidden;
   .main {
+    overflow-x: hidden;
     display: flex;
     flex-direction: column;
     row-gap: 6rem;
+    padding-top: 9.75rem;
     .textStack {
       @media screen and (max-width: 767.9px) {
         text-align: center;

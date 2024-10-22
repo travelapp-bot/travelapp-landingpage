@@ -20,9 +20,9 @@ export default function Home() {
           <Header />
           <Row className={classNames("align-items-end", styles.textStack)}>
             <Col xs={12} md={5} xxl={4}>
+              <Image className={styles.starIcon} src={starsG} alt="stars" />
               <h1 className="title64">
                 Here is <br /> How it works{" "}
-                <Image className={styles.starIcon} src={starsG} alt="stars" />
               </h1>
             </Col>
             <Col xs={12} md={7} xxl={8}>

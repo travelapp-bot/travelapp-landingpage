@@ -138,7 +138,13 @@ p {
 
 /*-------------- NAVBAR --------------*/
 .navbar {
+  position: fixed;
+  width: 100%;
+  background: var(--background);
+  top: 0;
+  left: 0;
   padding: 2.5rem 0;
+  z-index: 1;
   .container {
     .navbar-brand {
       font-size: 3rem;
@@ -148,22 +154,52 @@ p {
       padding: 0;
     }
     .navbar-nav {
+      margin: 0 auto;
       @media screen and (max-width: 991.9px) {
+        height: 100%;
         display: flex;
         flex-direction: column;
         text-align: center;
-        row-gap: 0.5rem;
+        justify-content: center;
+        row-gap: 1rem;
+        margin-top: 1rem;
+        margin-bottom: 1rem;
       }
       .nav-link {
         font-size: 1.75rem;
         font-weight: 500;
         color: var(--info-dark);
         padding: 0 1rem;
+        &:hover {
+          color: var(--success-dark);
+        }
+        @media screen and (max-width: 991.9px) {
+          font-size: 3.75rem;
+          font-weight: 600;
+        }
+      }
+      .nav-link.active{
+        color: var(--success-dark);
       }
     }
     .app-navbar-btn {
       @media screen and (max-width: 991.9px) {
         margin: 0 auto;
+      }
+    }
+    .navbar-collapse {
+      @media screen and (max-width: 991.9px) {
+        // min-height: auto;
+        // height: 100%;
+        height: calc(100vh - 76.5px);
+        min-height: calc(100vh - 76.5px);
+        max-height: calc(100vh - 76.5px);
+        width: 100%;
+        background: var(--background);
+        // position: relative;
+        // top: 76.5px;
+        // left: 0px;
+        z-index: 1;
       }
     }
   }
@@ -201,7 +237,7 @@ p {
       @media screen and (max-width: 576px) {
         padding: 0 8% 8%;
       }
-      .modal-img{
+      .modal-img {
         height: auto;
         width: 100px;
         object-fit: contain;
@@ -321,3 +357,64 @@ p {
 }
 
 /*-------------- APP BUTTON --------------*/
+/*-------------- SLICK SLIDER --------------*/
+// .slick-list {
+//   overflow: visible; // This allows partial slides to be visible
+// }
+
+.slick-track {
+  left: 19%;
+  @media screen and (max-width: 767.9px) {
+    left: 32%;
+  }
+  @media screen and (max-width: 480px) {
+    left: 0;
+  }
+}
+.slick-arrow {
+  top: auto;
+  bottom: -80px;
+  right: 0;
+  height: 54px;
+  width: 54px;
+  z-index: 10;
+  @media screen and (max-width: 767.9px) {
+    height: 44px;
+    width: 44px;
+  }
+}
+.slick-prev {
+  right: 80px;
+  left: auto;
+  @media screen and (max-width: 767.9px) {
+    right: 60px;
+  }
+  &::before {
+    font-size: 44px;
+    color: var(--success-dark);
+    @media screen and (max-width: 767.9px) {
+      font-size: 34px;
+    }
+  }
+}
+.slick-next {
+  right: 10px;
+  &::before {
+    font-size: 44px;
+    color: var(--success-dark);
+    @media screen and (max-width: 767.9px) {
+      font-size: 34px;
+    }
+  }
+}
+.slick-dots {
+  li {
+    width: 10px;
+    height: 10px;
+  }
+  li.slick-active button:before {
+    opacity: 1;
+    color: var(--success-dark);
+  }
+}
+/*-------------- SLICK SLIDER --------------*/

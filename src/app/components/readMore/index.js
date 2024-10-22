@@ -13,21 +13,23 @@ const ReadMore = () => {
   var settings = {
     dots: false,
     infinite: true,
-    speed: 500,
     slidesToShow: 2.5,
     slidesToScroll: 1,
+    // autoplay: true,
+    // autoplaySpeed: 2000,
+    rtl: true,
     responsive: [
       {
         breakpoint: 1024,
         settings: {
-          slidesToShow: 3,
+          slidesToShow: 2.5,
           slidesToScroll: 1,
         },
       },
       {
-        breakpoint: 600,
+        breakpoint: 767.9,
         settings: {
-          slidesToShow: 2,
+          slidesToShow: 1.5,
           slidesToScroll: 1,
         },
       },
@@ -36,6 +38,7 @@ const ReadMore = () => {
         settings: {
           slidesToShow: 1,
           slidesToScroll: 1,
+          dots: true,
         },
       },
     ],
