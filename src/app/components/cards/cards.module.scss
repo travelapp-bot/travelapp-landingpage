@@ -8,6 +8,7 @@
   background-color: var(--light);
   border: 1px solid var(--border-light);
   border-radius: 1.375rem;
+  overflow: hidden;
   .advantureCardContent {
     display: flex;
     flex-direction: column;
@@ -18,7 +19,7 @@
   }
   .advantureCardImg {
     height: auto;
-    width: 100%;
+    width: 90%;
     object-fit: contain;
   }
 }

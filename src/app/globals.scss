@@ -138,7 +138,13 @@ p {
 
 /*-------------- NAVBAR --------------*/
 .navbar {
+  position: fixed;
+  width: 100%;
+  background: var(--background);
+  top: 0;
+  left: 0;
   padding: 2.5rem 0;
+  z-index: 1;
   .container {
     .navbar-brand {
       font-size: 3rem;
@@ -148,22 +154,46 @@ p {
       padding: 0;
     }
     .navbar-nav {
+      margin: 0 auto;
       @media screen and (max-width: 991.9px) {
+        height: 100%;
         display: flex;
         flex-direction: column;
         text-align: center;
-        row-gap: 0.5rem;
+        justify-content: center;
+        row-gap: 1rem;
+        margin-top: 1rem;
+        margin-bottom: 1rem;
       }
       .nav-link {
         font-size: 1.75rem;
         font-weight: 500;
         color: var(--info-dark);
         padding: 0 1rem;
+        @media screen and (max-width: 991.9px) {
+          font-size: 3.75rem;
+          font-weight: 600;
+        }
       }
     }
     .app-navbar-btn {
       @media screen and (max-width: 991.9px) {
         margin: 0 auto;
+      }
+    }
+    .navbar-collapse {
+      @media screen and (max-width: 991.9px) {
+        // min-height: auto;
+        // height: 100%;
+        height: calc(100vh - 76.5px);
+        min-height: calc(100vh - 76.5px);
+        max-height: calc(100vh - 76.5px);
+        width: 100%;
+        background: var(--background);
+        // position: relative;
+        // top: 76.5px;
+        // left: 0px;
+        z-index: 1;
       }
     }
   }
@@ -201,7 +231,7 @@ p {
       @media screen and (max-width: 576px) {
         padding: 0 8% 8%;
       }
-      .modal-img{
+      .modal-img {
         height: auto;
         width: 100px;
         object-fit: contain;
@@ -321,3 +351,38 @@ p {
 }
 
 /*-------------- APP BUTTON --------------*/
+/*-------------- SLICK SLIDER --------------*/
+.slick-arrow {
+  top: auto;
+  bottom: -40px;
+  right: 0;
+  height: 28px;
+  width: 28px;
+  z-index: 10;
+}
+.slick-prev {
+  right: 40px;
+  left: auto;
+  &::before {
+    font-size: 24px;
+    color: var(--success-dark);
+  }
+}
+.slick-next {
+  right: 10px;
+  &::before {
+    font-size: 24px;
+    color: var(--success-dark);
+  }
+}
+.slick-dots {
+  li {
+    width: 10px;
+    height: 10px;
+  }
+  li.slick-active button:before {
+    opacity: 1;
+    color: var(--success-dark);
+  }
+}
+/*-------------- SLICK SLIDER --------------*/

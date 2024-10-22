@@ -2,9 +2,10 @@
 import Image from "next/image";
 import { Col, Row } from "react-bootstrap";
 import starsG from "../../assets/icon/starsG.svg";
-import trip from "../../assets/images/Customizable-trip-plans.svg";
+import trip from "../../assets/images/Customizable-trip-plans.png";
 import maps from "../../assets/images/Photos-maps-&-reviews.svg";
-import popular from "../../assets/images/Popular-itineraries.svg";
+import popular from "../../assets/images/Popular-itineraries.png";
+import tripAi from "../../assets/images/Your-trip-with-AI.png";
 import { AdvantureCard, WishlistCard } from "../cards";
 import styles from "./advanture.module.scss";
 
@@ -36,7 +37,7 @@ const Advanture = () => {
               desc: "Let you customize the trip as per your preference",
               img: trip,
             }}
-            imgClassName="ms-auto"
+            imgClassName={styles.tripImg}
           />
         </Col>
         <Col xs={12} sm={6} md={4}>
@@ -53,11 +54,11 @@ const Advanture = () => {
             {...{
               title: "Your trip with AI",
               desc: "Visit our Explore page to get ideas and inspiration from other travelers",
-              img: popular,
+              img: tripAi,
             }}
           />
         </Col>
-        <Col xs={12} sm={6} md={4}>
+        <Col xs={12} sm={12} md={4}>
           <WishlistCard />
         </Col>
       </Row>

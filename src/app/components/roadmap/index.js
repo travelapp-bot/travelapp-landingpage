@@ -5,6 +5,7 @@ import roadmap1 from "../../assets/images/Tell-us-what-you-love.svg";
 import roadmap2 from "../../assets/images/Your-perfect-trip-HandPicked-for-your’s.svg";
 import roadmap3 from "../../assets/images/All-your-trip-plans-in-one-place.svg";
 import styles from "./roadmap.module.scss";
+import classNames from "classnames";
 
 const RoadMap = () => {
   return (
@@ -52,7 +53,7 @@ const RoadMap = () => {
           </div>
         </Col>
       </Row>
-      <Row className={styles.row}>
+      <Row className={classNames(styles.row, styles.spacing)}>
         <Col xs={{order: 2, span:  12}} sm={{order: 1, span: 6}} md={5}>
           <div className={styles.content}>
             <h1 className="title48">
