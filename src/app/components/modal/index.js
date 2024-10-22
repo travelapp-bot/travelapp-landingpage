@@ -65,6 +65,7 @@ const AppModal = () => {
       centered
       show={modalToggle}
       onHide={handleClose}
+      className="p-0"
     >
       <Modal.Header closeButton></Modal.Header>
       <Modal.Body>

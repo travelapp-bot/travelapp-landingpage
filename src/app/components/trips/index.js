@@ -13,6 +13,7 @@ import AppButton, { IconButton } from "../buttons";
 import styles from "./trips.module.scss";
 import { useDispatch } from "react-redux";
 import { ModalToggle } from "@/app/redux/waitlist.slice";
+import { useEffect, useState } from "react";
 
 const Badge = ({ title }) => {
   return (
@@ -24,6 +25,16 @@ const Badge = ({ title }) => {
 
 const Trips = () => {
   const dispatch = useDispatch()
+  const [expandedIndex, setExpandedIndex] = useState(0);
+
+  const images = [tripImg4, tripImg2, tripImg3, tripImg1]
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setExpandedIndex((prevIndex) => (prevIndex + 1) % images.length);
+    }, 2000);
+
+    return () => clearInterval(timer);
+  }, [images.length]);
 
   const openModal = () => {
     dispatch(ModalToggle(true))
@@ -60,26 +71,18 @@ const Trips = () => {
         <Badge title="#JOINTRAVELAI" />
       </div>
       <div className={styles.gallery}>
-        <Image
-          src={tripImg2}
-          alt="nature view"
-          className={classNames(styles.galleryImg, styles.imgHalf)}
-        />
-        <Image
-          src={tripImg3}
-          alt="nature view"
-          className={classNames(styles.galleryImg, styles.imgHalf)}
-        />
-        <Image
-          src={tripImg1}
-          alt="nature view"
-          className={classNames(styles.galleryImg, styles.imgFull)}
-        />
-        <Image
-          src={tripImg4}
-          alt="nature view"
-          className={classNames(styles.galleryImg, styles.imgHalf)}
-        />
+        {images.map((image, index) => (
+          <Image
+            key={index}
+            className={classNames(
+              styles.galleryImg,
+              styles.imgHalf,
+              { [styles.expanded]: index === expandedIndex }
+            )}
+            src={image}
+            alt={`Image ${index + 1}`}
+          />
+        ))}
       </div>
     </div>
   );
