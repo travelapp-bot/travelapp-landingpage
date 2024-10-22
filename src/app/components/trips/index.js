@@ -11,6 +11,8 @@ import tripImg3 from "../../assets/images/trip-3.webp";
 import tripImg1 from "../../assets/images/trip1.svg";
 import AppButton, { IconButton } from "../buttons";
 import styles from "./trips.module.scss";
+import { useDispatch } from "react-redux";
+import { ModalToggle } from "@/app/redux/waitlist.slice";
 
 const Badge = ({ title }) => {
   return (
@@ -21,6 +23,11 @@ const Badge = ({ title }) => {
 };
 
 const Trips = () => {
+  const dispatch = useDispatch()
+
+  const openModal = () => {
+    dispatch(ModalToggle(true))
+  }
   return (
     <div className={styles.tripSec}>
       <div className={styles.content}>
@@ -31,19 +38,19 @@ const Trips = () => {
         </p>
       </div>
       <div className={styles.btnStack}>
-        <AppButton variant="dark" icon>
+        <AppButton variant="dark" icon onClick={openModal}>
           Join Waitlist
         </AppButton>
         <div className={styles.socialBtns}>
-          <IconButton  img={facebook} alt="Facebook" />
+          <IconButton img={facebook} alt="Facebook" />
           <IconButton
-            
+
             img={instagram}
             alt="instagram"
             className="app-insta-btn"
           />
-          <IconButton  variant="dark" img={x} alt="x" />
-          <IconButton  variant="danger" img={youtube} alt="youtube" />
+          <IconButton variant="dark" img={x} alt="x" />
+          <IconButton variant="danger" img={youtube} alt="youtube" />
         </div>
       </div>
       <div className={styles.badgeStack}>

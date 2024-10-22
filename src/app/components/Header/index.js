@@ -10,10 +10,17 @@ import youtube from "../../assets/icon/youtube.svg";
 import styles from "./header.module.scss";
 import AppButton, { IconButton } from "../buttons";
 import AppModal from "../modal";
+import { ModalToggle } from "@/app/redux/waitlist.slice";
+import { useDispatch } from "react-redux";
 import React from "react";
 
 const Header = () => {
-  const [modalShow, setModalShow] = React.useState(false);
+  const dispatch = useDispatch()
+
+  const openModal = () => {
+    dispatch(ModalToggle(true))
+    console.log("open modal")
+  }
   return (
     <div className={styles.header}>
       <Row className={styles.row}>
@@ -35,7 +42,7 @@ const Header = () => {
               by intelligent algorithms for a seamless travel experience.
             </p>
             <div className={styles.btnStack}>
-              <AppButton variant="dark" icon onClick={() => setModalShow(true)}>
+              <AppButton variant="dark" icon onClick={openModal} >
                 Join Waitlist
               </AppButton>
               <div className={styles.socialBtnsStack}>
@@ -73,7 +80,7 @@ const Header = () => {
           </div>
         </Col>
       </Row>
-      <AppModal show={modalShow} onHide={() => setModalShow(false)} />
+      {/* <AppModal /> */}
     </div>
   );
 };
