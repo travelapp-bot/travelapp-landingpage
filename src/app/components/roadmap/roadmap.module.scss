@@ -1,33 +1,48 @@
 .roadmap {
+
   .row {
     justify-content: space-between;
     align-items: center;
+
     @media screen and (max-width: 767.9px) {
       margin-bottom: 2rem;
     }
+
     @media screen and (max-width: 575.9px) {
       margin-bottom: 3rem;
     }
+
     .content {
       display: flex;
       flex-direction: column;
       row-gap: 2rem;
+
       @media screen and (max-width: 575.9px) {
         text-align: center;
       }
     }
+
     .banner {
       height: auto;
       width: 100%;
+
       @media screen and (max-width: 575.9px) {
         width: 80%;
         margin: 0 auto;
         display: block;
       }
     }
+
+    .spacingXs {
+      @media screen and (max-width: 575.9px) {
+        margin-bottom: 3rem;
+      }
+    }
   }
+
   .spacing {
     margin-top: 3rem;
+
     @media screen and (max-width: 575.9px) {
       margin-top: 5rem;
     }

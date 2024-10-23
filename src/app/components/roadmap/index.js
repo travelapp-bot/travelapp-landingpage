@@ -11,7 +11,7 @@ const RoadMap = () => {
   return (
     <div className={styles.roadmap}>
       <Row className={styles.row}>
-        <Col xs={{order: 2, span:  12}} sm={{order: 1, span: 6}} md={5}>
+        <Col xs={{ order: 2, span: 12 }} sm={{ order: 1, span: 6 }} md={5}>
           <div className={styles.content}>
             <h1 className="title48">
               Tell us what <br /> you love
@@ -24,7 +24,7 @@ const RoadMap = () => {
             </p>
           </div>
         </Col>
-        <Col xs={{order: 1, span:  12}} sm={{order: 2, span: 6}} md={5}>
+        <Col xs={{ order: 1, span: 12 }} sm={{ order: 2, span: 6 }} md={5}>
           <Image
             className={styles.banner}
             src={roadmap1}
@@ -32,16 +32,16 @@ const RoadMap = () => {
           />
         </Col>
       </Row>
-      <Row className={styles.row}>
+      <Row className={classNames(styles.row, styles.rowSpacing)}>
         <Col xs={12} sm={6} md={6}>
           <Image
-            className={styles.banner}
+            className={classNames(styles.banner, styles.spacingXs)}
             src={roadmap2}
             alt="Your perfect trip, HandPicked for your’s"
           />
         </Col>
         <Col xs={12} sm={6} md={5}>
-          <div className={styles.content}>
+          <div className={classNames(styles.content, styles.spacingXs)}>
             <h1 className="title48">
               Your perfect trip, HandPicked for your’s
             </h1>
@@ -53,8 +53,8 @@ const RoadMap = () => {
           </div>
         </Col>
       </Row>
-      <Row className={classNames(styles.row, styles.spacing)}>
-        <Col xs={{order: 2, span:  12}} sm={{order: 1, span: 6}} md={5}>
+      <Row className={styles.row}>
+        <Col xs={{ order: 2, span: 12 }} sm={{ order: 1, span: 6 }} md={5}>
           <div className={styles.content}>
             <h1 className="title48">
               All your trip plans, <br /> in one place
@@ -66,9 +66,9 @@ const RoadMap = () => {
             </p>
           </div>
         </Col>
-        <Col xs={{order: 1, span:  12}} sm={{order: 2, span: 6}} md={5}>
+        <Col xs={{ order: 1, span: 12 }} sm={{ order: 2, span: 6 }} md={5}>
           <Image
-            className={styles.banner}
+            className={classNames(styles.banner, styles.spacingXs)}
             src={roadmap3}
             alt="All your trip plans, in one place"
           />
