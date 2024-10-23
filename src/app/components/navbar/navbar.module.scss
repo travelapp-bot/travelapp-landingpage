@@ -52,6 +52,7 @@
   
   .navbar-toggler {
     transition: transform 0.3s ease;
+    border: none !important;
   
     &.collapsed {
       transform: rotate(0deg);
@@ -60,5 +61,9 @@
     &:not(.collapsed) {
       transform: rotate(90deg);
     }
+   
+  }
+  .icon{
+    width: 50px;
   }
   

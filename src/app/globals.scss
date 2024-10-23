@@ -72,6 +72,10 @@ p {
   @media (min-width: 1620px) {
     max-width: 1550px;
   }
+  @media (max-width: 576px) {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
 }
 
 /*-------------- CONTAINER --------------*/
@@ -149,7 +153,8 @@ p {
   top: 0;
   left: 0;
   padding: 2.5rem 0;
-  z-index: 1;
+  z-index: 3;
+
   .container {
     .navbar-brand {
       font-size: 3rem;
@@ -161,6 +166,7 @@ p {
 
     .navbar-nav {
       margin: 0 auto;
+
       @media screen and (max-width: 991.9px) {
         height: 100%;
         display: flex;
@@ -177,15 +183,18 @@ p {
         font-weight: 500;
         color: var(--info-dark);
         padding: 0 1rem;
+
         &:hover {
           color: var(--success-dark);
         }
+
         @media screen and (max-width: 991.9px) {
           font-size: 3.75rem;
           font-weight: 600;
         }
       }
-      .nav-link.active{
+
+      .nav-link.active {
         color: var(--success-dark);
       }
     }
@@ -195,6 +204,7 @@ p {
         margin: 0 auto;
       }
     }
+
     .navbar-collapse {
       @media screen and (max-width: 991.9px) {
         // min-height: auto;
@@ -207,51 +217,56 @@ p {
         // position: relative;
         // top: 76.5px;
         // left: 0px;
-        z-index: 1;
+        z-index: 3;
+      }
+    }
+
+    .navbar-toggler {
+
+      &:focus,
+      &:active {
+        outline: none !important;
+        box-shadow: none !important;
+      }
+
+      .hamburger {
+        font-size: 20px;
+        color: black;
       }
     }
   }
 }
+
 /*-------------- NAVBAR --------------*/
 /*-------------- MODAL --------------*/
-.modal-dialog {
-  width: 690px;
-  max-width: 690px;
-  @media screen and (max-width: 767.9px) {
-    width: 90%;
-  }
-  @media screen and (max-width: 576px) {
-    width: 95%;
-    max-width: fit-content;
-    margin-left: auto;
-    margin-right: auto;
-  }
-  .modal-content {
-    border-radius: 1.5rem;
-    .modal-header {
-      border-bottom: none;
-      padding: 20px;
-      .btn-close {
-        font-size: 20px;
-        color: var(--foreground);
-      }
+.modal {
+  padding-right: 0px !important;
+
+  .modal-dialog {
+    width: 690px;
+    max-width: 690px;
+
+    @media screen and (max-width: 767.9px) {
+      width: 90%;
     }
-    .modal-body {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      row-gap: 24px;
-      padding: 1rem 6.25rem 3.75rem;
-      @media screen and (max-width: 576px) {
-        padding: 0 8% 8%;
-      }
-      .modal-img {
-        height: auto;
-        width: 100px;
-        object-fit: contain;
-        margin-bottom: 12px;
-        @media screen and (max-width: 767.9px) {
-          font-size: 26px;
+
+    @media screen and (max-width: 576px) {
+      width: 95%;
+      max-width: fit-content;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .modal-content {
+      border-radius: 1.5rem;
+
+      .modal-header {
+        border-bottom: none;
+        padding: 20px;
+
+        .btn-close {
+          font-size: 20px;
+          color: var(--foreground);
         }
       }
 
@@ -343,6 +358,7 @@ p {
   }
 }
 
+
 /*-------------- MODAL --------------*/
 
 /*-------------- APP BUTTON --------------*/
@@ -409,57 +425,71 @@ p {
 
 .slick-track {
   left: 19%;
+
   @media screen and (max-width: 767.9px) {
     left: 32%;
   }
+
   @media screen and (max-width: 480px) {
     left: 0;
   }
 }
+
 .slick-arrow {
   top: auto;
   bottom: -80px;
   right: 0;
   height: 54px;
   width: 54px;
-  z-index: 10;
+  z-index: 2;
+
   @media screen and (max-width: 767.9px) {
     height: 44px;
     width: 44px;
   }
 }
+
 .slick-prev {
   right: 80px;
   left: auto;
+
   @media screen and (max-width: 767.9px) {
     right: 60px;
   }
+
   &::before {
     font-size: 44px;
     color: var(--success-dark);
+
     @media screen and (max-width: 767.9px) {
       font-size: 34px;
     }
   }
 }
+
 .slick-next {
   right: 10px;
+
   &::before {
     font-size: 44px;
     color: var(--success-dark);
+
     @media screen and (max-width: 767.9px) {
       font-size: 34px;
     }
   }
 }
+
 .slick-dots {
   li {
     width: 10px;
     height: 10px;
   }
+
   li.slick-active button:before {
     opacity: 1;
     color: var(--success-dark);
   }
 }
+
 /*-------------- SLICK SLIDER --------------*/
