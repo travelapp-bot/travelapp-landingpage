@@ -30,8 +30,8 @@ export default function Home() {
               </Col>
               <Col xs={12} md={7} xxl={8}>
                 <p className="desc28 ps-4">
-                  Lorem Ipsum is simply dummy text of the printing and typesetting
-                  industry. Lorem Ipsum has been the industry's standard dummy
+                  Lorem Ipsum is simply dummy text of the printing and typesetting
+                  industry.Lorem Ipsum has been the industry's standard dummy
                   text ever since the 1500s.
                 </p>
               </Col>
