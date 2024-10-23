@@ -17,9 +17,9 @@ const Footer = () => {
         </Col>
         <Col xs={12} sm={6}>
           <div className={styles.links}>
-            <Link href="#">Home</Link>
-            <Link href="#">How it works</Link>
-            <Link href="#">Blogs</Link>
+            <Link href="#header">Home</Link>
+            <Link href="#how-it-works">How it works</Link>
+            <Link href="#blogs">Blogs</Link>
           </div>
         </Col>
         <Col xs={12} sm={3}>

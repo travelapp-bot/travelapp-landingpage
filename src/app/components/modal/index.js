@@ -1,34 +1,71 @@
+"use client";
 import { useState } from "react";
 import Button from "react-bootstrap/Button";
 import Col from "react-bootstrap/Col";
 import Form from "react-bootstrap/Form";
-import InputGroup from "react-bootstrap/InputGroup";
 import Modal from "react-bootstrap/Modal";
 import Row from "react-bootstrap/Row";
 import AppButton from "../buttons";
 import Image from "next/image";
 import email from "../../assets/images/email.png";
+import { useDispatch, useSelector } from "react-redux";
+import { waitlistAction } from "@/app/redux/waitlist.action";
+import { ModalToggle } from "@/app/redux/waitlist.slice";
 
-const AppModal = ({ show, onHide, ...props }) => {
+const AppModal = () => {
   const [validated, setValidated] = useState(false);
 
-  const handleSubmit = (event) => {
+  const [formData, setFormData] = useState({
+    name: '',
+    username: '',
+    email: '',
+  });
+
+  const modalToggle = useSelector(state => state?.clients?.openModal);
+  const dispatch = useDispatch();
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData({
+      ...formData,
+      [name]: value,
+    });
+  };
+
+  const handleSubmit = async (event) => {
+    event.preventDefault();
     const form = event.currentTarget;
     if (form.checkValidity() === false) {
-      event.preventDefault();
       event.stopPropagation();
+    } else {
+      setValidated(true);
+      await dispatch(waitlistAction(formData));
+      setFormData({
+        name: '',
+        username: '',
+        email: '',
+      });
     }
-
-    setValidated(true);
   };
+
+  const handleClose = () => {
+    dispatch(ModalToggle(false));
+    setValidated(false);
+    setFormData({
+      name: '',
+      username: '',
+      email: '',
+    });
+  };
+
   return (
     <Modal
-      {...props}
       size="lg"
       aria-labelledby="contained-modal-title-vcenter"
       centered
-      show={show}
-      onHide={onHide}
+      show={modalToggle}
+      onHide={handleClose}
+      className="p-0"
     >
       <Modal.Header closeButton></Modal.Header>
       <Modal.Body>
@@ -48,7 +85,9 @@ const AppModal = ({ show, onHide, ...props }) => {
                 required
                 type="text"
                 placeholder="First name"
-                defaultValue="John"
+                name="name"
+                value={formData.name}
+                onChange={handleChange}
                 size="lg"
               />
               <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
@@ -59,7 +98,9 @@ const AppModal = ({ show, onHide, ...props }) => {
                 required
                 type="text"
                 placeholder="Last name"
-                defaultValue="Doe"
+                name="username"
+                value={formData.username}
+                onChange={handleChange}
                 size="lg"
               />
               <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
@@ -70,7 +111,9 @@ const AppModal = ({ show, onHide, ...props }) => {
                 required
                 type="email"
                 placeholder="johndoe@travel.ai"
-                defaultValue="johndoe@travel.ai"
+                name="email"
+                value={formData.email}
+                onChange={handleChange}
                 size="lg"
               />
               <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
