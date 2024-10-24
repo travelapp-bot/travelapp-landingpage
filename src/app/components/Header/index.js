@@ -32,8 +32,8 @@ const Header = () => {
                 className={styles.starIcon}
                 src={stars}
                 alt="stars"
-                width={57}
-                height={57}
+                // width={37}
+                // height={37}
                 priority
               />
             </h1>
