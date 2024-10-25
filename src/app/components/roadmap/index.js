@@ -92,8 +92,8 @@ import roadmap1 from "../../assets/images/Tell-us-what-you-love.svg";
 import roadmap2 from "../../assets/images/Your-perfect-trip-HandPicked-for-your’s.svg";
 import roadmap3 from "../../assets/images/All-your-trip-plans-in-one-place.svg";
 import plan from "../../assets/images/plane.png";
+import travelbag from "../../assets/images/travelbag.png"
 import styles from "./roadmap.module.scss";
-import travelbag from "../../assets/images/travelbag.png";
 
 gsap.registerPlugin(ScrollTrigger, MotionPathPlugin);
 
@@ -107,7 +107,7 @@ const RoadMap = () => {
           trigger: "#path-svg",
           start: "top 80%",
           end: "bottom 20%",
-          scrub: 2,
+          scrub: 1,
         },
         motionPath: {
           path: "#customPath",
@@ -149,7 +149,8 @@ const RoadMap = () => {
       <Row className={styles.row}>
         <Col xs={{ order: 2, span: 12 }} sm={{ order: 1, span: 6 }} md={5}>
           <div className={styles.contentNoBackground}>
-            <div className="title48Div"><h1 className="title48">Tell us what <br /> you love</h1>  <Image className={styles.travelBag} src={travelbag} alt="Tell us what you love" /> </div>
+            <div className="title48Div"><h1 className="title48">Tell us what <br /> you love</h1> <Image className={styles.travelBag} src={travelbag} alt="Tell us what you love" /> 
+            </div>
             <p className="desc24">
               Ask us for suggestions for any destination or ask us for an entire itinerary...
             </p>

@@ -1,4 +1,5 @@
 .roadmap {
+  position: relative;
 
   .row {
     justify-content: space-between;
@@ -8,14 +9,31 @@
       margin-bottom: 2rem;
     }
 
-    @media screen and (max-width: 575.9px) {
-      margin-bottom: 3rem;
+    .contentNoBackground {
+      display: flex;
+      flex-direction: column;
+      row-gap: 2rem;
+      position: relative;
+      z-index: 2;
+
+      @media screen and (max-width: 575.9px) {
+        text-align: center;
+
+      }
+
+      .travelBag {
+        width: 22%;
+        height: auto;
+      }
     }
 
     .content {
       display: flex;
       flex-direction: column;
       row-gap: 2rem;
+      background-color: #ffffff;
+      position: relative;
+      z-index: 2;
 
       @media screen and (max-width: 575.9px) {
         text-align: center;
@@ -25,26 +43,36 @@
     .banner {
       height: auto;
       width: 100%;
-
-      @media screen and (max-width: 575.9px) {
-        width: 80%;
-        margin: 0 auto;
-        display: block;
-      }
-    }
-
-    .spacingXs {
-      @media screen and (max-width: 575.9px) {
-        margin-bottom: 3rem;
-      }
     }
   }
 
-  .spacing {
-    margin-top: 3rem;
+  .pathSvg {
+    position: absolute;
+    top: 14%;
+    left: 13%;
+    width: 51%;
+    height: auto;
+    z-index: 1;
+    @media screen and (max-width: 767.9px) {
+      display: none;
+    }
+  }
 
-    @media screen and (max-width: 575.9px) {
-      margin-top: 5rem;
+  .airplane {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 2;
+    @media screen and (max-width: 767.9px) {
+      display: none;
+    }
+
+    img {
+      width: 70px;
+      height: auto;
+      @media screen and (max-width: 767.9px) {
+        display: none;
+      }
     }
   }
 }
