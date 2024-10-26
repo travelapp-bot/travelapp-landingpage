@@ -369,15 +369,19 @@ p {
 
 /*-------------- APP BUTTON --------------*/
 .app-icon-btn {
-  min-height: 3.125rem;
-  min-width: 3.125rem;
-  height: 3.125rem;
-  width: 3.125rem;
-  padding: 0.5rem;
+  // min-height: 3.125rem;
+  // min-width: 3.125rem;
+  // height: 3.125rem;
+  // width: 3.125rem;
+  // padding: 0.5rem;
   border-radius: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  // display: flex;
+  // justify-content: center;
+  // align-items: center;
+  // border: none;
+  padding:0px !important;
+  margin-right: 8px;
+  background-color: transparent;
   border: none;
 
   .btn-icon {

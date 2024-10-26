@@ -2,6 +2,7 @@ import Image from "next/image";
 import Button from "react-bootstrap/Button";
 import logo from "../../assets/icon/logo.svg";
 import classNames from "classnames";
+import Link from "next/link";
 
 export const IconButton = ({
   variant = "primary",
@@ -9,12 +10,13 @@ export const IconButton = ({
   alt,
   className,
   size = "3.125rem",
-  onClick,
+  hrefLink,
   props,
 }) => {
+  console.log(hrefLink ,props ,'here')
   const btnSize = size === "xs" ? "32px" : size;
   const btnPadding = size === "xs" ? "6px" : "0.675rem";
-
+  
   return (
     <Button
       variant={variant}
@@ -27,7 +29,7 @@ export const IconButton = ({
         minWidth: btnSize,
         padding: btnPadding,
       }}
-      onClick={onClick}
+      href={hrefLink}
     >
       <Image
         className="btn-icon"

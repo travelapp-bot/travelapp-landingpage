@@ -97,7 +97,7 @@ import styles from "./roadmap.module.scss";
 
 gsap.registerPlugin(ScrollTrigger, MotionPathPlugin);
 
-const RoadMap = () => {
+const RoadMap = ({data}) => {
   const airplaneRef = useRef(null);
 
   useEffect(() => {
@@ -118,7 +118,7 @@ const RoadMap = () => {
         duration: 10,
       });
   }, []);
-
+  // console.log(data[0],'content for roadmap')
   return (
     <div className={styles.roadmap}>
       <svg
@@ -149,27 +149,27 @@ const RoadMap = () => {
       <Row className={styles.row}>
         <Col xs={{ order: 2, span: 12 }} sm={{ order: 1, span: 6 }} md={5}>
           <div className={styles.contentNoBackground}>
-            <div className="title48Div"><h1 className="title48">Tell us what <br /> you love</h1> <Image className={styles.travelBag} src={travelbag} alt="Tell us what you love" /> 
+            <div className="title48Div"><h1 className="title48">{data[0].title.span1}<br/>{data[0].title.span2} </h1> <Image className={styles.travelBag} src={travelbag} alt={data[0].alt} /> 
             </div>
             <p className="desc24">
-              Ask us for suggestions for any destination or ask us for an entire itinerary...
+              {data[0].description}
             </p>
           </div>
         </Col>
         <Col xs={{ order: 1, span: 12 }} sm={{ order: 2, span: 6 }} md={5}>
-          <Image className={styles.banner} src={roadmap1} alt="Tell us what you love" />
+          <Image className={styles.banner} src={roadmap1} alt={data[0].alt} />
         </Col>
       </Row>
 
       <Row className={styles.row}>
         <Col xs={12} sm={6} md={6}>
-          <Image className={styles.banner} src={roadmap2} alt="Your perfect trip, HandPicked for your’s" />
+          <Image className={styles.banner} src={roadmap2} alt={data[1].alt} />
         </Col>
         <Col xs={12} sm={6} md={5}>
           <div className={styles.content}>
-            <h1 className="title48">Your perfect trip, HandPicked for your’s</h1>
+            <h1 className="title48">{data[1].title.span1}<br/>{data[1].title.span2}</h1>
             <p className="desc24">
-              We’ll provide personalized, actionable travel experiences based on your preferences...
+            {data[1].description}
             </p>
           </div>
         </Col>
@@ -178,14 +178,14 @@ const RoadMap = () => {
       <Row className={styles.row}>
         <Col xs={{ order: 2, span: 12 }} sm={{ order: 1, span: 6 }} md={5}>
           <div className={styles.content}>
-            <h1 className="title48">All your trip plans, <br /> in one place</h1>
+          <h1 className="title48">{data[2].title.span1}<br/>{data[2].title.span2}</h1>
             <p className="desc24">
-              We’ll provide personalized, actionable travel experiences based on your preferences...
+            {data[2].description}
             </p>
           </div>
         </Col>
         <Col xs={{ order: 1, span: 12 }} sm={{ order: 2, span: 6 }} md={5}>
-          <Image className={styles.banner} src={roadmap3} alt="All your trip plans, in one place" />
+          <Image className={styles.banner} src={roadmap3} alt={data[2].alt} />
         </Col>
       </Row>
     </div>

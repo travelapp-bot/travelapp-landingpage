@@ -1,14 +1,13 @@
 "use client";
 import Link from "next/link";
 import { Col, Row } from "react-bootstrap";
-import facebook from "../../assets/icon/facebook.svg";
-import instagram from "../../assets/icon/instagram.svg";
-import x from "../../assets/icon/x.svg";
-import youtube from "../../assets/icon/youtube.svg";
+
 import { IconButton } from "../buttons";
 import styles from "./footer.module.scss";
+import data from '../../content'
 
 const Footer = () => {
+  console.log(data.website.social,'link here')
   return (
     <footer className={styles.footer}>
       <Row className={styles.stack}>
@@ -17,21 +16,21 @@ const Footer = () => {
         </Col>
         <Col xs={12} sm={6}>
           <div className={styles.links}>
-            <Link href="#header">Home</Link>
-            <Link href="#how-it-works">How it works</Link>
-            <Link href="#blogs">Blogs</Link>
+            <Link href="#home">{data.website.navigation[0].text}</Link>
+            <Link href="#how-it-works">{data.website.navigation[1].text}</Link>
+            <Link href="#blogs">{data.website.navigation[2].text}</Link>
           </div>
         </Col>
         <Col xs={12} sm={3}>
           <div className={styles.socialBtns}>
-            <IconButton img={facebook} alt="Facebook" />
-            <IconButton
-              img={instagram}
-              alt="instagram"
-              className="app-insta-btn"
-            />
-            <IconButton variant="dark" img={x} alt="x" />
-            <IconButton variant="danger" img={youtube} alt="youtube" />
+          {data.website.social_btn.map((button, index) => (
+              <IconButton
+                key={index}
+                img={button.img}               // Add an 'img' property in each button if applicable
+                alt={button.text}
+                hrefLink={button.link}
+              />
+            ))}
           </div>
         </Col>
       </Row>

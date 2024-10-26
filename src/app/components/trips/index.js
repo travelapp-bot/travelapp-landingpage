@@ -14,6 +14,7 @@ import styles from "./trips.module.scss";
 import { useDispatch } from "react-redux";
 import { ModalToggle } from "@/app/redux/waitlist.slice";
 import { useEffect, useState } from "react";
+import data from '../../content'
 
 const Badge = ({ title }) => {
   return (
@@ -42,33 +43,30 @@ const Trips = () => {
   return (
     <div className={styles.tripSec}>
       <div className={styles.content}>
-        <h1 className="title64">Tag us on your trips</h1>
+        <h1 className="title64">{data.website.social.title}</h1>
         <p className="desc24">
-          Lorem Ipsum is simply dummy text of the printing and typesetting
-          industry. Lorem Ipsum has been the industry&apos;s standard dummy text{" "}
+          {data.website.social.description}{" "}
         </p>
       </div>
       <div className={styles.btnStack}>
         <AppButton variant="dark" icon onClick={openModal}>
-          Join Waitlist
+          {data.website.cta_buttons[0].text}
         </AppButton>
         <div className={styles.socialBtns}>
-          <IconButton img={facebook} alt="Facebook" />
-          <IconButton
-
-            img={instagram}
-            alt="instagram"
-            className="app-insta-btn"
-          />
-          <IconButton variant="dark" img={x} alt="x" />
-          <IconButton variant="danger" img={youtube} alt="youtube" />
+          {data.website.social_btn.map((button, index) => (
+              <IconButton
+                key={index}
+                img={button.img}               // Add an 'img' property in each button if applicable
+                alt={button.text}
+                hrefLink={button.link}
+              />
+            ))}
         </div>
       </div>
       <div className={styles.badgeStack}>
-        <Badge title="#JOINTRAVELAI" />
-        <Badge title="#JOINTRAVELAI" />
-        <Badge title="#JOINTRAVELAI" />
-        <Badge title="#JOINTRAVELAI" />
+      {data.website.social.hashtags.map((hashtag, index) => (
+        <Badge title={hashtag} key={index} />
+      ))}        
       </div>
       <div className={styles.gallery}>
         {images.map((image, index) => (

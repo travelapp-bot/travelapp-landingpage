@@ -13,6 +13,7 @@ import AppModal from "../modal";
 import { ModalToggle } from "@/app/redux/waitlist.slice";
 import { useDispatch } from "react-redux";
 import React from "react";
+import data from '../../content.js'
 
 const Header = () => {
   const dispatch = useDispatch()
@@ -27,7 +28,7 @@ const Header = () => {
         <Col xs={{ order: 2, span: 12 }} md={{ order: 1, span: 8 }}>
           <div className={styles.content}>
             <h1>
-              Discover your perfect Trip with AI-Power{" "}
+              {data.website.tagline}{" "}
               <Image
                 className={styles.starIcon}
                 src={stars}
@@ -37,33 +38,24 @@ const Header = () => {
                 priority
               />
             </h1>
-            <p>
-              Plan unforgettable journeys tailored to your preferences, powered
-              by intelligent algorithms for a seamless travel experience.
-            </p>
+            <p>{data.website.description}</p>
             <div className={styles.btnStack}>
               <AppButton variant="dark" icon onClick={openModal} >
-                Join Waitlist
+                {data.website.cta_buttons[0].text}
               </AppButton>
               <div className={styles.socialBtnsStack}>
                 <span>
-                  lets explore <br /> with us
+                  Explore <br /> with us
                 </span>
                 <div className={styles.socialBtns}>
-                  <IconButton size="xs" img={facebook} alt="Facebook" />
-                  <IconButton
-                    size="xs"
-                    img={instagram}
-                    alt="instagram"
-                    className="app-insta-btn"
-                  />
-                  <IconButton size="xs" variant="dark" img={x} alt="x" />
-                  <IconButton
-                    size="xs"
-                    variant="danger"
-                    img={youtube}
-                    alt="youtube"
-                  />
+                {data.website.social_btn.map((button, index) => (
+              <IconButton
+                key={index}
+                img={button.img}               // Add an 'img' property in each button if applicable
+                alt={button.text}
+                hrefLink={button.link}
+              />
+            ))} 
                 </div>
               </div>
             </div>
@@ -75,7 +67,7 @@ const Header = () => {
             <Image
               className={styles.banner}
               src={banner}
-              alt="Discover your perfect Trip with AI-Power"
+              alt={data.website.description}
             />
           </div>
         </Col>

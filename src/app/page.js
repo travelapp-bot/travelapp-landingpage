@@ -12,6 +12,7 @@ import ReadMore from "./components/readMore";
 import classNames from "classnames";
 import StoreProvider from "./redux/Provider";
 import AppModal from "./components/modal";
+import data from './content.js'
 
 export default function Home() {
   return (
@@ -20,23 +21,21 @@ export default function Home() {
         <AppNavbar />
         <Container>
           <main className={styles.main}>
-            <Header id="header" />
+            <Header id="home" />
             <Row id="how-it-works" className={classNames("align-items-end", styles.textStack)}>
               <Col xs={12} md={5} xxl={4}>
                 <h1 className="title64">
-                  Here is <br /> How it works{" "}
+                  {data.website.section_one.title.span1}<br/>{data.website.section_one.title.span2} {" "}
                   <Image className={styles.starIcon} src={starsG} alt="stars" />
                 </h1>
               </Col>
               <Col xs={12} md={7} xxl={8}>
                 <p className="desc28 ps-4">
-                  Lorem Ipsum is simply dummy text of the printing and typesetting
-                  industry. Lorem Ipsum has been the industry&apos;s standard dummy
-                  text ever since the 1500s.
+                {data.website.section_one.description}.
                 </p>
               </Col>
             </Row>
-            <RoadMap />
+            <RoadMap data={data.website.section_one.child} />
             <Advanture />
           </main>
         </Container>
