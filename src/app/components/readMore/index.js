@@ -63,7 +63,7 @@ const ReadMore = () => {
         <div className={styles.cardStack}>
           <Slider {...settings}>
             {data.website.blogs.map((blog, index) => (
-            <div className={styles.sliderStack}>
+            <div className={styles.sliderStack} key={index}>
               <ReadMoreCard
                 key={index}
                 title={blog.short_title}
