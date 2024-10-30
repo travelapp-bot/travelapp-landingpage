@@ -5,8 +5,8 @@
   color: var(--background);
 
   .row {
+    justify-content: space-between;
     align-items: center;
-
     .content {
       @media screen and (max-width: 767.9px) {
         text-align: center;
@@ -92,12 +92,15 @@
       }
 
       .shadow {
-        height: 24rem;
-        width: 24rem;
+        height: 80%;
+        width: 80%;
         background-color: #f3f3f3f2;
         position: absolute;
         z-index: 0;
         filter: blur(250px);
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
         
       }
 

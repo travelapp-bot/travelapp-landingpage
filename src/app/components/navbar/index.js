@@ -39,7 +39,7 @@ const AppNavbar = () => {
       expanded={isExpanded} 
       onToggle={() => setIsExpanded(!isExpanded)}
     >
-      <Container>
+      <Container fluid>
         <Navbar.Brand href="#">Travel.ai</Navbar.Brand>
         <Navbar.Toggle style={{ border: 'none' }} aria-controls="navbarScroll">
           <FontAwesomeIcon className="hamburger" icon={faBars} />

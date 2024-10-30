@@ -79,6 +79,11 @@ p {
   }
 }
 
+.container-fluid{
+  padding-left: 3%;
+  padding-right: 3%;
+}
+
 /*-------------- CONTAINER --------------*/
 /*-------------- VARIABLE CLASSES --------------*/
 .title64 {
@@ -161,7 +166,7 @@ p {
   padding: 2.5rem 0;
   z-index: 3;
 
-  .container {
+  .container-fluid {
     .navbar-brand {
       font-size: 3rem;
       font-weight: 500;

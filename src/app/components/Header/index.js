@@ -25,7 +25,7 @@ const Header = () => {
   return (
     <div className={styles.header}>
       <Row className={styles.row}>
-        <Col xs={{ order: 2, span: 12 }} md={{ order: 1, span: 8 }}>
+        <Col xs={{ order: 2, span: 12 }} md={{ order: 1, span: 8 }} xxl={6}>
           <div className={styles.content}>
             <h1>
               {data.website.tagline}{" "}
@@ -61,7 +61,7 @@ const Header = () => {
             </div>
           </div>
         </Col>
-        <Col xs={{ order: 1, span: 12 }} md={{ order: 2, span: 4 }}>
+        <Col xs={{ order: 1, span: 12 }} md={{ order: 2, span: 4 }} xxl={5}>
           <div className={styles.bannerStack}>
             <div className={styles.shadow} />
             <Image
