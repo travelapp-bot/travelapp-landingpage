@@ -1,0 +1,12 @@
+.blogList{
+    padding: 4.5rem 0 10rem;
+    .row{
+        margin-top: 4.5rem;
+        row-gap: 2rem;
+    }
+}
+.multiSelectBtns{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+}

@@ -1,0 +1,28 @@
+.header {
+  min-height: 26rem;
+  padding: 6.25rem 5.125rem;
+  border-radius: 1.5rem;
+  background-color: var(--success-dark);
+  color: var(--background);
+  .row {
+    justify-content: center;
+    align-items: center;
+    .content {
+      text-align: center;
+      .starIcon {
+        height: 57px;
+        width: 57px;
+      }
+      h1 {
+        font-size: 3.75rem;
+        font-weight: 600;
+        line-height: 5.675rem;
+      }
+      p {
+        font-size: 1.5rem;
+        font-weight: 500;
+        margin-top: 1.125rem;
+      }
+    }
+  }
+}

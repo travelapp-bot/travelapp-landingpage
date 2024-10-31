@@ -1,18 +1,18 @@
 import Image from "next/image";
 import styles from "./page.module.scss";
-import AppNavbar from "./components/navbar";
-import Header from "./components/Header";
+import AppNavbar from "../components/navbar";
+import Header from "../components/Header";
 import { Col, Container, Row } from "react-bootstrap";
-import starsG from "./assets/icon/starsG.svg";
-import RoadMap from "./components/roadmap";
-import Advanture from "./components/advanture";
-import Trips from "./components/trips";
-import Footer from "./components/footer";
-import ReadMore from "./components/readMore";
+import starsG from "../assets/icon/starsG.svg";
+import RoadMap from "../components/roadmap";
+import Advanture from "../components/advanture";
+import Trips from "../components/trips";
+import Footer from "../components/footer";
+import ReadMore from "../components/readMore";
 import classNames from "classnames";
-import StoreProvider from "./redux/Provider";
-import AppModal from "./components/modal";
-import data from "./content.js";
+import StoreProvider from "../redux/Provider";
+import AppModal from "../components/modal";
+import data from "../content.js";
 
 export default function Home() {
   return (
@@ -47,11 +47,8 @@ export default function Home() {
           </Container>
         </main>
         <ReadMore />
-        <div id="blogs" className={styles.footerSec}>
-          <Container fluid>
-            <Trips />
-            <Footer />
-          </Container>
+        <div id="blogs" >
+          <Trips />
         </div>
         <AppModal />
       </div>

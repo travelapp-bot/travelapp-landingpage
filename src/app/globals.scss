@@ -27,9 +27,9 @@ html {
     font-size: 65%;
   }
 
-  @media screen and (max-width: 992px) {
-    font-size: 52%;
-  }
+  // @media screen and (max-width: 992px) {
+  //   font-size: 52%;
+  // }
 }
 
 html,
@@ -67,6 +67,13 @@ p {
   margin-bottom: 0;
 }
 
+.main-layout{
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
 /*-------------- CONTAINER --------------*/
 .container {
   @media (min-width: 1620px) {
@@ -79,7 +86,7 @@ p {
   }
 }
 
-.container-fluid{
+.container-fluid {
   padding-left: 3%;
   padding-right: 3%;
 }
@@ -124,6 +131,9 @@ p {
   line-height: 2.25rem;
   font-weight: 600;
   color: var(--info-dark);
+  @media screen and (max-width: 1440px) {
+    font-size: 1.75rem;
+  }
 }
 
 .desc28 {
@@ -152,6 +162,13 @@ p {
   line-height: 1.5rem;
   font-weight: 500;
   color: var(--info);
+  @media screen and (max-width: 1440px) {
+    font-size: 1.25rem;
+    line-height: normal;
+  }
+  @media screen and (max-width: 1024px) {
+    font-size: 1.275rem;
+  }
 }
 
 /*-------------- VARIABLE CLASSES --------------*/
@@ -233,7 +250,6 @@ p {
     }
 
     .navbar-toggler {
-
       &:focus,
       &:active {
         outline: none !important;
@@ -369,7 +385,6 @@ p {
   }
 }
 
-
 /*-------------- MODAL --------------*/
 
 /*-------------- APP BUTTON --------------*/
@@ -384,7 +399,7 @@ p {
   // justify-content: center;
   // align-items: center;
   // border: none;
-  padding:0px !important;
+  padding: 0px !important;
   margin-right: 8px;
   background-color: transparent;
   border: none;
@@ -397,11 +412,13 @@ p {
 }
 
 .app-insta-btn {
-  background: linear-gradient(45deg,
-      #faad4f 14.61%,
-      #dd2a7b 39.38%,
-      #9537b0 58.49%,
-      #515bd4 85.39%);
+  background: linear-gradient(
+    45deg,
+    #faad4f 14.61%,
+    #dd2a7b 39.38%,
+    #9537b0 58.49%,
+    #515bd4 85.39%
+  );
 }
 
 .app-btn {
@@ -430,6 +447,17 @@ p {
 .btn-success {
   background-color: var(--success-dark);
   border-color: var(--success-dark);
+}
+
+.multi-select-btn {
+  font-size: 1.875rem;
+  border-radius: 0.75rem;
+  color: #000;
+  border: 1px solid #cacaca;
+  padding: 0.5rem 1.25rem;
+  background-color: transparent;
+  width: max-content;
+  min-width: auto;
 }
 
 /*-------------- APP BUTTON --------------*/

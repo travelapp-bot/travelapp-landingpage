@@ -40,9 +40,9 @@ export const IconButton = ({
   );
 };
 
-const AppButton = ({ icon = false, variant = "success", children, className, onClick, ...props }) => {
+const AppButton = ({ icon = false, variant = "success", children, className, style, onClick, ...props }) => {
   return (
-    <Button variant={variant} {...props} className={classNames(className, "app-btn")} onClick={onClick}>
+    <Button variant={variant} {...props} className={classNames(className, "app-btn")} onClick={onClick} style={style}>
       {icon && (
         <Image src={logo} alt="Next.js logo" className="app-btn-icon" />
       )}

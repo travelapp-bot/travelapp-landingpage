@@ -7,7 +7,7 @@ import AppButton from "../buttons";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBars } from '@fortawesome/free-solid-svg-icons';
 import { useDispatch } from "react-redux";
-import { ModalToggle } from "@/app/redux/waitlist.slice";
+import { ModalToggle } from "../../redux/waitlist.slice";
 import styles from "./navbar.module.scss";
 import data from "../../content.js"
 
@@ -40,7 +40,7 @@ const AppNavbar = () => {
       onToggle={() => setIsExpanded(!isExpanded)}
     >
       <Container fluid>
-        <Navbar.Brand href="#">Travel.ai</Navbar.Brand>
+        <Navbar.Brand href="/">Travel.ai</Navbar.Brand>
         <Navbar.Toggle style={{ border: 'none' }} aria-controls="navbarScroll">
           <FontAwesomeIcon className="hamburger" icon={faBars} />
         </Navbar.Toggle>

@@ -72,10 +72,26 @@
     flex-direction: column;
     row-gap: 1rem;
     padding: 2.125rem 1.875rem 0.75rem;
-    .date {
+    .dateStack {
+      display: flex;
+      align-items: center;
       margin-top: 1.675rem;
+      column-gap: 16px;
+      .line {
+        height: 1.5rem;
+        width: 2px;
+        border-radius: 2px;
+        background-color: var(--info);
+      }
+      .arrowBtn {
+        border-radius: 0;
+        margin-bottom: .25rem;
+        &:hover{
+          background-color: transparent !important;
+        }
+      }
     }
-    .ellipse{
+    .ellipse {
       display: -webkit-box;
       -webkit-line-clamp: 3; /* Limits the text to 3 lines */
       -webkit-box-orient: vertical;

@@ -1,16 +1,19 @@
 import localFont from "next/font/local";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import 'bootstrap/dist/css/bootstrap.min.css';
+import "bootstrap/dist/css/bootstrap.min.css";
 import "./globals.scss";
-import { Poppins } from 'next/font/google'
+import { Poppins } from "next/font/google";
+import AppNavbar from "@/components/navbar";
+import StoreProvider from "@/redux/Provider";
+import Footer from "@/components/footer";
 
 const poppins = Poppins({
-  weight: ['400', '500', '600', '700'],
-  style: ['normal', 'italic'],
-  subsets: ['latin'],
-  display: 'swap',
-})
+  weight: ["400", "500", "600", "700"],
+  style: ["normal", "italic"],
+  subsets: ["latin"],
+  display: "swap",
+});
 // const geistSans = localFont({
 //   src: "./fonts/GeistVF.woff",
 //   variable: "--font-geist-sans",
@@ -24,10 +27,16 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
-      <body className={poppins.className}>
-        {children}
-      </body>
-    </html>
+    <StoreProvider>
+      <html lang="en">
+        <body className={poppins.className}>
+          <div className="main-layout">
+            <AppNavbar />
+            {children}
+            <Footer />
+          </div>
+        </body>
+      </html>
+    </StoreProvider>
   );
 }

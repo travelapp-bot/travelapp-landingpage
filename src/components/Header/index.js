@@ -10,7 +10,7 @@ import youtube from "../../assets/icon/youtube.svg";
 import styles from "./header.module.scss";
 import AppButton, { IconButton } from "../buttons";
 import AppModal from "../modal";
-import { ModalToggle } from "@/app/redux/waitlist.slice";
+import { ModalToggle } from "../../redux/waitlist.slice";
 import { useDispatch } from "react-redux";
 import React from "react";
 import data from '../../content.js'

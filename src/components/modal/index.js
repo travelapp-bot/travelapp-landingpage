@@ -9,8 +9,8 @@ import AppButton from "../buttons";
 import Image from "next/image";
 import email from "../../assets/images/email.png";
 import { useDispatch, useSelector } from "react-redux";
-import { waitlistAction } from "@/app/redux/waitlist.action";
-import { ModalToggle } from "@/app/redux/waitlist.slice";
+import { waitlistAction } from "../../redux/waitlist.action";
+import { ModalToggle } from "../../redux/waitlist.slice";
 
 const AppModal = () => {
   const [validated, setValidated] = useState(false);

@@ -5,8 +5,10 @@ import classNames from "classnames";
 import arrowR from "../../assets/icon/arroe-right.svg";
 import wishlist from "../../assets/images/Join-the-wish-list.svg";
 import Link from "next/link";
-import { ModalToggle } from "@/app/redux/waitlist.slice";
+import { ModalToggle } from "../../redux/waitlist.slice";
 import { useDispatch } from "react-redux";
+import { IconButton } from "../buttons";
+import arrow from "../../assets/icon/arrow-up.svg";
 
 export const AdvantureCard = ({
   title,
@@ -15,7 +17,6 @@ export const AdvantureCard = ({
   className,
   imgClassName,
 }) => {
-
   return (
     <div className={classNames(styles.advantureCard, className)}>
       <div className={styles.advantureCardContent}>
@@ -43,8 +44,12 @@ export const WishlistCard = () => {
         <h1>
           Join the <br /> wish list
         </h1>
-           <Image src={arrowR} alt="Arrow" className={styles.arrowR} onClick={openModal} />
-        
+        <Image
+          src={arrowR}
+          alt="Arrow"
+          className={styles.arrowR}
+          onClick={openModal}
+        />
       </div>
       <Image
         src={wishlist}
@@ -62,6 +67,9 @@ export const ReadMoreCard = ({
   img,
   labels = [],
   cardBg,
+  className,
+  divider,
+  href,
 }) => {
   const getLabelStyles = (index) => {
     switch (index) {
@@ -89,11 +97,25 @@ export const ReadMoreCard = ({
     }
   };
   return (
-    <div className={styles.readMoreCard} style={{ backgroundColor: cardBg }}>
+    <div
+      className={classNames(styles.readMoreCard, className)}
+      style={{ backgroundColor: cardBg }}
+    >
       <div className={styles.readMoreContent}>
         <h1 className="title24">{title}</h1>
         <p className={classNames("desc16", styles.ellipse)}>{desc}</p>
-        <p className={classNames("desc16", styles.date)}>{date}</p>
+        <div className={styles.dateStack}>
+          <p className={classNames("desc16", styles.date)}>{date}</p>
+          {divider && <div className={styles.line} />}
+          {href && (
+            <IconButton
+              hrefLink={href}
+              img={arrow}
+              className={styles.arrowBtn}
+              size="1.125rem"
+            />
+          )}
+        </div>
       </div>
       <div className={styles.imgStack}>
         <Image src={img} alt={title} className={styles.readMoreCardImg} />
