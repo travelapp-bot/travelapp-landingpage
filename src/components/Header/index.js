@@ -48,14 +48,14 @@ const Header = () => {
                   Explore <br /> with us
                 </span>
                 <div className={styles.socialBtns}>
-                {data.website.social_btn.map((button, index) => (
-              <IconButton
-                key={index}
-                img={button.img}               // Add an 'img' property in each button if applicable
-                alt={button.text}
-                hrefLink={button.link}
-              />
-            ))} 
+                  {data.website.social_btn.map((button, index) => (
+                    <IconButton
+                      key={index}
+                      img={button.img}               // Add an 'img' property in each button if applicable
+                      alt={button.text}
+                      hrefLink={button.link}
+                    />
+                  ))}
                 </div>
               </div>
             </div>

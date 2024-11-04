@@ -67,7 +67,7 @@ p {
   margin-bottom: 0;
 }
 
-.main-layout{
+.main-layout {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -131,6 +131,7 @@ p {
   line-height: 2.25rem;
   font-weight: 600;
   color: var(--info-dark);
+
   @media screen and (max-width: 1440px) {
     font-size: 1.75rem;
   }
@@ -162,10 +163,12 @@ p {
   line-height: 1.5rem;
   font-weight: 500;
   color: var(--info);
+
   @media screen and (max-width: 1440px) {
     font-size: 1.25rem;
     line-height: normal;
   }
+
   @media screen and (max-width: 1024px) {
     font-size: 1.275rem;
   }
@@ -250,6 +253,7 @@ p {
     }
 
     .navbar-toggler {
+
       &:focus,
       &:active {
         outline: none !important;
@@ -412,13 +416,11 @@ p {
 }
 
 .app-insta-btn {
-  background: linear-gradient(
-    45deg,
-    #faad4f 14.61%,
-    #dd2a7b 39.38%,
-    #9537b0 58.49%,
-    #515bd4 85.39%
-  );
+  background: linear-gradient(45deg,
+      #faad4f 14.61%,
+      #dd2a7b 39.38%,
+      #9537b0 58.49%,
+      #515bd4 85.39%);
 }
 
 .app-btn {

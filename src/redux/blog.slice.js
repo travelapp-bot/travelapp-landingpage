@@ -15,11 +15,14 @@ const blogReducer = createSlice({
             state.Category = payload
         }
     }
-
 })
 
 export default blogReducer.reducer
 export const { setAllBlog, setCategory } = blogReducer.actions
+export const blogs = createDraftSafeSelector(
+    [state => state.blog.blogs],
+    (blogs) => blogs
+)
 export const category = createDraftSafeSelector(
     [state => state?.blog?.Category],
     (Category) => Category

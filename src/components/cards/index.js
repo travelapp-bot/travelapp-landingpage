@@ -18,8 +18,6 @@ export const AdvantureCard = ({
   imgClassName,
 }) => {
 
-
-
   return (
     <div className={classNames(styles.advantureCard, className)}>
       <div className={styles.advantureCardContent}>
@@ -68,7 +66,7 @@ export const ReadMoreCard = ({
   desc,
   date,
   img,
-  labels = [],
+  tags = [],
   cardBg,
   className,
   divider,
@@ -131,7 +129,7 @@ export const ReadMoreCard = ({
       <div className={styles.imgStack}>
         <img src={img} alt={title} className={styles.readMoreCardImg} />
         <div className={styles.labelStack}>
-          {labels.map((option, ind) => (
+          {tags.map((option, ind) => (
             <p className={styles.label} key={ind} style={getLabelStyles(ind)}>
               {option}
             </p>

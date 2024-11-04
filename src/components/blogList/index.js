@@ -11,14 +11,15 @@ import { getAllBlogs, getCategories } from "@/redux/blog.action";
 import { category } from "@/redux/blog.slice";
 
 const MultiSelectButtons = ({ selectedCategories, setSelectedCategories, categories }) => {
+  console.log(categories)
   const toggleCategory = (categoryId) => {
-    if (categoryId === "All") {
-      setSelectedCategories(["All"]);
+    if (categoryId === "BB4EIB82pA0yKmFTLDLw") {
+      setSelectedCategories(["BB4EIB82pA0yKmFTLDLw"]);
     } else {
       setSelectedCategories((prev) =>
         prev.includes(categoryId)
           ? prev.filter((cat) => cat !== categoryId)
-          : [...prev.filter((cat) => cat !== "All"), categoryId]
+          : [...prev.filter((cat) => cat !== "BB4EIB82pA0yKmFTLDLw"), categoryId]
       );
     }
   };
@@ -51,16 +52,16 @@ const BlogList = () => {
   const dispatch = useDispatch();
   const allBlogs = useSelector(state => state.blog.blogs);
   const blogCategories = useSelector(category);
-  const [selectedCategories, setSelectedCategories] = useState(["All"]);
+  const [selectedCategories, setSelectedCategories] = useState(["BB4EIB82pA0yKmFTLDLw"]);
 
   useEffect(() => {
     dispatch(getAllBlogs());
     dispatch(getCategories());
   }, [dispatch]);
 
-  const filteredCards = selectedCategories.includes("All")
+  const filteredCards = selectedCategories.includes("BB4EIB82pA0yKmFTLDLw")
     ? allBlogs
-    : allBlogs.filter((blog) => selectedCategories.includes(blog.categoryId));
+    : allBlogs.filter((blog) => selectedCategories.includes(blog.category));
 
   return (
     <Container>
@@ -78,11 +79,11 @@ const BlogList = () => {
                 desc={card.content}
                 date="24 June 2024"
                 img={card?.imageUrl}
-                // labels={card.labels.slice(0, 3)}
+                tags={card?.tags}
                 cardBg="#fff"
                 className="shadow"
                 divider
-                href="#"
+                href={`/detail/${card.id}`}
               />
             </Col>
           ))}
