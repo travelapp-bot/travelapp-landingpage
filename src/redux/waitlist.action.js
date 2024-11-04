@@ -1,10 +1,8 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
-import { getFirestore } from "firebase/firestore";
-import app from "../components/firebase/firebase.config";
+import {db } from "../components/firebase/firebase.config";
 import { doc, setDoc } from "firebase/firestore";
 import { ModalToggle } from "./waitlist.slice";
 
-const db = getFirestore(app);
 
 export const waitlistAction = createAsyncThunk(
     "joinWaitlist/form",

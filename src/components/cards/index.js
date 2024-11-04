@@ -17,6 +17,9 @@ export const AdvantureCard = ({
   className,
   imgClassName,
 }) => {
+
+
+
   return (
     <div className={classNames(styles.advantureCard, className)}>
       <div className={styles.advantureCardContent}>
@@ -71,6 +74,15 @@ export const ReadMoreCard = ({
   divider,
   href,
 }) => {
+
+  const extractParagraphSnippet = (htmlContent) => {
+    const parser = new DOMParser();
+    const doc = parser.parseFromString(htmlContent, 'text/html');
+    const paragraphs = doc.querySelectorAll('p');
+    let text = Array.from(paragraphs).map(p => p.textContent).join(' ');
+    return text.length > 100 ? text.substring(0, 100) + "..." : text;
+  };
+
   const getLabelStyles = (index) => {
     switch (index) {
       case 0:
@@ -91,7 +103,6 @@ export const ReadMoreCard = ({
           color: "#305265",
           borderColor: "#305265",
         };
-      // Add more cases as needed for other labels
       default:
         return { backgroundColor: "#E0FBE7", color: "#30653B" };
     }
@@ -103,7 +114,7 @@ export const ReadMoreCard = ({
     >
       <div className={styles.readMoreContent}>
         <h1 className="title24">{title}</h1>
-        <p className={classNames("desc16", styles.ellipse)}>{desc}</p>
+        <p className={classNames("desc16", styles.ellipse)}>{extractParagraphSnippet(desc)}</p>
         <div className={styles.dateStack}>
           <p className={classNames("desc16", styles.date)}>{date}</p>
           {divider && <div className={styles.line} />}
@@ -118,7 +129,7 @@ export const ReadMoreCard = ({
         </div>
       </div>
       <div className={styles.imgStack}>
-        <Image src={img} alt={title} className={styles.readMoreCardImg} />
+        <img src={img} alt={title} className={styles.readMoreCardImg} />
         <div className={styles.labelStack}>
           {labels.map((option, ind) => (
             <p className={styles.label} key={ind} style={getLabelStyles(ind)}>
