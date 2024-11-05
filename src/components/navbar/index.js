@@ -41,7 +41,7 @@ const AppNavbar = () => {
       onToggle={() => setIsExpanded(!isExpanded)}
     >
       <Container fluid>
-        <Navbar.Brand href="/">Travel.ai</Navbar.Brand>
+        <Navbar.Brand >Travel.ai</Navbar.Brand>
         <Navbar.Toggle style={{ border: 'none' }} aria-controls="navbarScroll">
           <FontAwesomeIcon className="hamburger" icon={faBars} />
         </Navbar.Toggle>
@@ -53,8 +53,8 @@ const AppNavbar = () => {
             <Nav.Link href="#how-it-works" className={styles.navItem} onClick={handleLinkClick}>
               {data.website.navigation[1].text}
             </Nav.Link>
-            <Nav.Link href="/blogs" className={styles.navItem} onClick={handleLinkClick}>
-              {data.website.navigation[2].text}
+            <Nav.Link href="/blogs" className={styles.navItem} >  {/* //onClick={handleLinkClick} */}
+            {data.website.navigation[2].text}
             </Nav.Link>
             <AppButton onClick={() => { openModal(); handleLinkClick(); }} icon className={`${styles.navItem} app-navbar-btn d-lg-none`}>
               {data.website.cta_buttons[0].text}

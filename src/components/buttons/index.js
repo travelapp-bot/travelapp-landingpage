@@ -13,7 +13,7 @@ export const IconButton = ({
   hrefLink,
   props,
 }) => {
-  console.log(hrefLink ,props ,'here')
+  
   const btnSize = size === "xs" ? "32px" : size;
   const btnPadding = size === "xs" ? "6px" : "0.675rem";
   

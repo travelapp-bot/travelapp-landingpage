@@ -1,7 +1,7 @@
 <svg width="761" height="469" viewBox="0 0 761 469" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
 <g filter="url(#filter0_dd_212_769)">
 <rect x="38" y="75" width="607.821" height="343.588" fill="white"/>
-<line x1="122.208" y1="89.7734" x2="122.208" y2="408.457" stroke="#CACACA" stroke-width="0.422098"/>
+<line x1="122.208" y1="89.7734" x2="122.208" y2="408.457" stroke="#CACACA" strokeWidth="0.422098"/>
 <g filter="url(#filter1_d_212_769)">
 <rect x="138.037" y="187.278" width="187.411" height="30.391" rx="3.37678" fill="#FAFAFA"/>
 </g>
@@ -34,7 +34,7 @@
 <rect x="45.1758" y="191.499" width="70.4903" height="10.9745" rx="2.11049" fill="url(#paint13_linear_212_769)"/>
 <rect x="137.193" y="113.411" width="232.576" height="14.7734" rx="2.11049" fill="url(#paint14_linear_212_769)"/>
 <rect x="137.193" y="137.893" width="162.508" height="14.7734" rx="2.11049" fill="url(#paint15_linear_212_769)"/>
-<line x1="138.881" y1="169.339" x2="393.828" y2="169.339" stroke="#CACACA" stroke-width="0.422098"/>
+<line x1="138.881" y1="169.339" x2="393.828" y2="169.339" stroke="#CACACA" strokeWidth="0.422098"/>
 <g style="mix-blend-mode:luminosity">
 <rect x="393.828" y="75" width="251.992" height="343.588" fill="url(#pattern4_212_769)"/>
 </g>
@@ -49,7 +49,7 @@
 <rect x="647.675" y="26" width="75.3247" height="75.3247" fill="url(#pattern7_212_769)"/>
 <circle cx="563.176" cy="176.824" r="6.17647" transform="rotate(180 563.176 176.824)" fill="#007AFF"/>
 <g clip-path="url(#clip0_212_769)">
-<path d="M560.294 177.71L561.764 179.6C561.814 179.665 561.877 179.717 561.95 179.754C562.023 179.79 562.103 179.809 562.184 179.81C562.264 179.811 562.343 179.794 562.416 179.761C562.488 179.727 562.553 179.678 562.604 179.617L567.294 173.941" stroke="white" stroke-width="0.538462" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M560.294 177.71L561.764 179.6C561.814 179.665 561.877 179.717 561.95 179.754C562.023 179.79 562.103 179.809 562.184 179.81C562.264 179.811 562.343 179.794 562.416 179.761C562.488 179.727 562.553 179.678 562.604 179.617L567.294 173.941" stroke="white" strokeWidth="0.538462" strokeLinecap="round" strokeLinejoin="round"/>
 </g>
 </g>
 <defs>

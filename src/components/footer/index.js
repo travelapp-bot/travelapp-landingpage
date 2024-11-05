@@ -7,7 +7,7 @@ import styles from "./footer.module.scss";
 import data from "../../content";
 
 const Footer = () => {
-  console.log(data.website.social, "link here");
+  // console.log(data.website.social, "link here");
   return (
     <footer className={styles.footer}>
       <Container  fluid>
