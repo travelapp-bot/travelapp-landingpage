@@ -6,9 +6,20 @@ import starsG from "../../assets/icon/starsG.svg";
 import { ReadMoreCard } from "../cards";
 import styles from "./readMore.module.scss";
 import Slider from "react-slick";
-import data from '../../content'
+import data from '../../content';
+import { useDispatch, useSelector } from "react-redux";
+import { useEffect } from "react";
+import { getAllBlogs } from "@/redux/blog.action";
 
 const ReadMore = () => {
+
+  const dispatch = useDispatch()
+  const { blogs } = useSelector((state) => state.blog);
+
+  useEffect(() => {
+    dispatch(getAllBlogs())
+  }, [])
+
   var settings = {
     dots: false,
     infinite: true,
@@ -62,19 +73,19 @@ const ReadMore = () => {
         </Row>
         <div className={styles.cardStack}>
           <Slider {...settings}>
-            {data.website.blogs.map((blog, index) => (
-            <div className={styles.sliderStack} key={index}>
-              <ReadMoreCard
-                key={index}
-                title={blog.short_title}
-                desc={blog.description}
-                date={blog.date}
-                img={blog.image}
-                labels={blog.labels}
-              />
-            </div>
+            {blogs?.map((blog, index) => (
+              <div className={styles.sliderStack} key={index}>
+                <ReadMoreCard
+                  key={index}
+                  title={blog.title}
+                  desc={blog?.content}
+                  date={blog?.date}
+                  img={blog.imageUrl}
+                  tags={blog.tags}
+                />
+              </div>
             ))}
-          
+
           </Slider>
         </div>
       </Container>

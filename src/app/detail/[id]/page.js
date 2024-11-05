@@ -7,6 +7,7 @@ import { useParams } from 'next/navigation';
 import { getAllBlogs } from "@/redux/blog.action";
 import { useDispatch, useSelector } from 'react-redux'
 import { blogs } from '@/redux/blog.slice'
+import Loader from '@/components/loader';
 function Detail() {
     const dispatch = useDispatch();
     const { id } = useParams();

@@ -7,6 +7,8 @@ import { Poppins } from "next/font/google";
 import AppNavbar from "@/components/navbar";
 import StoreProvider from "@/redux/Provider";
 import Footer from "@/components/footer";
+import FullScreenLoader from "@/components/loader";
+import Loader from "@/components/loader";
 
 const poppins = Poppins({
   weight: ["400", "500", "600", "700"],
@@ -33,6 +35,7 @@ export default function RootLayout({ children }) {
           <div className="main-layout">
             <AppNavbar />
             {children}
+            <Loader />
             <Footer />
           </div>
         </body>

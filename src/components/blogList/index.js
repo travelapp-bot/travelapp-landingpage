@@ -54,6 +54,18 @@ const BlogList = () => {
   const blogCategories = useSelector(category);
   const [selectedCategories, setSelectedCategories] = useState(["BB4EIB82pA0yKmFTLDLw"]);
 
+  function convertSecondsToDate(seconds) {
+    const milliseconds = seconds * 1000;
+    const date = new Date(milliseconds);
+    const formattedDate = date.toLocaleDateString("en-GB", {
+      day: "numeric",
+      month: "short",
+      year: "numeric"
+    });
+
+    return formattedDate;
+  }
+
   useEffect(() => {
     dispatch(getAllBlogs());
     dispatch(getCategories());
@@ -77,7 +89,7 @@ const BlogList = () => {
               <ReadMoreCard
                 title={card.title}
                 desc={card.content}
-                date="24 June 2024"
+                date={convertSecondsToDate(card?.createDate?.seconds)}
                 img={card?.imageUrl}
                 tags={card?.tags}
                 cardBg="#fff"
