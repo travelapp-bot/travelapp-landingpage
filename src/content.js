@@ -27,22 +27,22 @@ const data = {
     social_btn: [
       {
         text:"Facebook",
-        link:"https://facebook.com/",
+        link:"https://facebook.com",
         img: facebook,
       },
       {
         text:"Intagram",
-        link:"https://instagram.com/",
+        link:"https://instagram.com",
         img: instagram,
       },
       {
         text:"X",
-        link:"https://x.com/",
+        link:"https://x.com",
         img: x,
       },
       {
         text:"Youtube",
-        link:"https://youtube.com/",
+        link:"https://youtube.com",
         img : youtube,
       }
     ],

@@ -41,7 +41,7 @@ function Detail() {
 
     useEffect(() => {
         dispatch(getAllBlogs())
-    }, [id])
+    }, [id,dispatch])
 
     console.log(id)
 
