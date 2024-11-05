@@ -11,12 +11,14 @@ function Loader() {
             {loading &&
                 <div className="loader-wrapper">
                     <Oval
-                        height={100}
-                        width={100}
+                        height={50}
+                        width={50}
                         radius={5}
-                        color="#4fa94d"
+                        color="grey"
+                        secondaryColor='#A9A9A9'
                         ariaLabel="ball-triangle-loading"
                         visible={loading}
+                    
                     />
                 </div>
             }

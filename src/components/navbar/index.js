@@ -54,7 +54,7 @@ const AppNavbar = () => {
               {data.website.navigation[1].text}
             </Nav.Link>
             <Nav.Link href="/blogs" className={styles.navItem} >  {/* //onClick={handleLinkClick} */}
-            {data.website.navigation[2].text}
+              {data.website.navigation[2].text}
             </Nav.Link>
             <AppButton onClick={() => { openModal(); handleLinkClick(); }} icon className={`${styles.navItem} app-navbar-btn d-lg-none`}>
               {data.website.cta_buttons[0].text}

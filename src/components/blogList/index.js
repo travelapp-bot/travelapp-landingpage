@@ -9,6 +9,8 @@ import { ReadMoreCard } from "../cards";
 import { useDispatch, useSelector } from "react-redux";
 import { getAllBlogs, getCategories } from "@/redux/blog.action";
 import { category } from "@/redux/blog.slice";
+import { convertSecondsToDate } from "@/constant";
+import Loader from "../loader";
 
 const MultiSelectButtons = ({ selectedCategories, setSelectedCategories, categories }) => {
   console.log(categories)
@@ -54,17 +56,7 @@ const BlogList = () => {
   const blogCategories = useSelector(category);
   const [selectedCategories, setSelectedCategories] = useState(["BB4EIB82pA0yKmFTLDLw"]);
 
-  function convertSecondsToDate(seconds) {
-    const milliseconds = seconds * 1000;
-    const date = new Date(milliseconds);
-    const formattedDate = date.toLocaleDateString("en-GB", {
-      day: "numeric",
-      month: "short",
-      year: "numeric"
-    });
 
-    return formattedDate;
-  }
 
   useEffect(() => {
     dispatch(getAllBlogs());
@@ -77,6 +69,8 @@ const BlogList = () => {
 
   return (
     <Container>
+      <Loader />
+
       <div className={styles.blogList}>
         <MultiSelectButtons
           selectedCategories={selectedCategories}

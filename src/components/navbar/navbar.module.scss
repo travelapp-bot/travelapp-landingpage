@@ -1,69 +1,78 @@
-
 @keyframes fadeIn {
-    0% {
-      opacity: 0;
-      transform: translateY(20px);
-    }
-    100% {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+.navbar {
+  transition: opacity 0.3s ease;
+  opacity: 0;
+
+  &.visible {
+    opacity: 1;
+  }
+
+  .navbar-collapse {
+    display: none;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+
+    &.show {
+      display: block;
       opacity: 1;
-      transform: translateY(0);
     }
   }
-  
-  
-  .navbar {
-    transition: opacity 0.3s ease;
-    opacity: 0; 
-  
-    &.visible {
-      opacity: 1; 
-    }
-  
-    .navbar-collapse {
-      display: none; 
-      opacity: 0; 
-      transition: opacity 0.3s ease;
-  
-      &.show {
-        display: block;
-        opacity: 1; 
-      }
-    }
-  
-    .navItem {
-      opacity: 0; 
-      animation: fadeIn 0.5s forwards; 
-      animation-delay: 0.2s; 
-  
+
+  .navItem {
+    @media screen and (max-width: 991px) {
+      opacity: 0;
+      animation: fadeIn 0.5s forwards;
+      animation-delay: 0.2s;
+
       &:nth-child(1) {
-        animation-delay: 0.3s; 
+        animation-delay: 0.3s;
       }
+
       &:nth-child(2) {
-        animation-delay: 0.5s; 
+        animation-delay: 0.5s;
       }
+
       &:nth-child(3) {
         animation-delay: 0.7s;
       }
+
       &:nth-child(4) {
         animation-delay: 0.9s;
       }
     }
   }
-  
-  .navbar-toggler {
+}
+
+.navbar-toggler {
+  @media screen and (max-width: 991px) {
     transition: transform 0.3s ease;
-    border: none !important;
-  
-    &.collapsed {
-      transform: rotate(0deg);
-    }
-  
-    &:not(.collapsed) {
-      transform: rotate(90deg);
-    }
-   
   }
-  .icon{
+
+  border: none !important;
+
+  &.collapsed {
+    transform: rotate(0deg);
+  }
+
+  &:not(.collapsed) {
+    transform: rotate(90deg);
+  }
+
+
+
+  .icon {
     width: 50px;
   }
-  
+}

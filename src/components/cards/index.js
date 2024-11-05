@@ -74,17 +74,15 @@ export const ReadMoreCard = ({
 }) => {
 
   const extractParagraphSnippet = (htmlContent) => {
-    // Check if the code is running in the browser
-  if (typeof window !== 'undefined' && typeof DOMParser !== 'undefined') {
-    const parser = new DOMParser();
-    const doc = parser.parseFromString(htmlContent, 'text/html');
-    const paragraphs = doc.querySelectorAll('p');
-    let text = Array.from(paragraphs).map(p => p.textContent).join(' ');
-    return text.length > 100 ? text.substring(0, 100) + "..." : text;
-  } else {
-    // Return a fallback value for server-side rendering
-    return '';
-  }
+    if (typeof window !== 'undefined' && typeof DOMParser !== 'undefined') {
+      const parser = new DOMParser();
+      const doc = parser.parseFromString(htmlContent, 'text/html');
+      const paragraphs = doc.querySelectorAll('p');
+      let text = Array.from(paragraphs).map(p => p.textContent).join(' ');
+      return text.length > 100 ? text.substring(0, 100) + "..." : text;
+    } else {
+      return '';
+    }
   };
 
   const getLabelStyles = (index) => {
@@ -133,7 +131,12 @@ export const ReadMoreCard = ({
         </div>
       </div>
       <div className={styles.imgStack}>
-        <Image src={img} alt={title} className={styles.readMoreCardImg} />
+        <Image
+          src={img}
+          alt={title}
+          layout="fill"
+          objectFit="cover"
+          className={styles.readMoreCardImg} />
         <div className={styles.labelStack}>
           {tags.map((option, ind) => (
             <p className={styles.label} key={ind} style={getLabelStyles(ind)}>

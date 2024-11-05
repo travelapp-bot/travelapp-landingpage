@@ -7,7 +7,9 @@ import { useParams } from 'next/navigation';
 import { getAllBlogs } from "@/redux/blog.action";
 import { useDispatch, useSelector } from 'react-redux'
 import { blogs } from '@/redux/blog.slice'
+import { convertSecondsToDate } from "@/constant";
 import Loader from '@/components/loader';
+
 function Detail() {
     const dispatch = useDispatch();
     const { id } = useParams();
@@ -42,18 +44,19 @@ function Detail() {
 
     useEffect(() => {
         dispatch(getAllBlogs())
-    }, [id,dispatch])
+    }, [id, dispatch])
 
     console.log(id)
 
     return (
         <main className={styles.main}>
             <Container >
+                <Loader />
                 <div className={styles.subContainer}>
                     <div>
                         <h1 className='title48'>{blog?.title}</h1>
                         <div className={styles.stack}>
-                            <p className='desc24'>24 july 2024 </p>
+                            <p className='desc24'>{convertSecondsToDate(blog?.createDate?.seconds)}</p>
                             <div className={styles.labelStack}>
                                 {blog?.tags?.map((option, ind) => (
                                     <p className={styles.label} key={ind} style={getLabelStyles(ind)}>
@@ -67,7 +70,6 @@ function Detail() {
                         dangerouslySetInnerHTML={{ __html: blog?.content }}
                     />
                 </div>
-
             </Container>
         </main>
     )
