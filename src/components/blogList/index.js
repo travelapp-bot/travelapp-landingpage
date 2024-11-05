@@ -69,14 +69,13 @@ const BlogList = () => {
 
   return (
     <Container>
-      <Loader />
-
       <div className={styles.blogList}>
         <MultiSelectButtons
           selectedCategories={selectedCategories}
           setSelectedCategories={setSelectedCategories}
           categories={blogCategories}
         />
+        <Loader />
         <Row className={styles.row}>
           {filteredCards?.map((card) => (
             <Col key={card.id} xs={12} md={6} lg={4}>
