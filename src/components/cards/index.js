@@ -115,7 +115,7 @@ export const ReadMoreCard = ({
       style={{ backgroundColor: cardBg }}
     >
       <div className={styles.readMoreContent}>
-        <h1 className="title24">{title}</h1>
+        <h1 className={classNames("title24",styles.titleOverflow)}>{title}</h1>
         <p className={classNames("desc16", styles.ellipse)}>{extractParagraphSnippet(desc)}</p>
         <div className={styles.dateStack}>
           <p className={classNames("desc16", styles.date)}>{date}</p>

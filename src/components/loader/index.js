@@ -13,12 +13,13 @@ function Loader() {
                     <Oval
                         height={50}
                         width={50}
+                        strokeWidth={5}
                         radius={5}
                         color="grey"
                         secondaryColor='#A9A9A9'
                         ariaLabel="ball-triangle-loading"
                         visible={loading}
-                    
+
                     />
                 </div>
             }

@@ -17,11 +17,11 @@ const Footer = () => {
           </Col>
           <Col xs={12} sm={6}>
             <div className={styles.links}>
-              <Link href="#home">{data.website.navigation[0].text}</Link>
+              <Link href="/">{data.website.navigation[0].text}</Link>
               <Link href="#how-it-works">
                 {data.website.navigation[1].text}
               </Link>
-              <Link href="#blogs">{data.website.navigation[2].text}</Link>
+              <Link href="/blogs">{data.website.navigation[2].text}</Link>
             </div>
           </Col>
           <Col xs={12} sm={3}>

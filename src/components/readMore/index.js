@@ -73,7 +73,7 @@ const ReadMore = () => {
         </Row>
         <div className={styles.cardStack}>
           <Slider {...settings}>
-            {blogs?.map((blog, index) => (
+            {blogs?.slice(0,7).map((blog, index) => (
               <div className={styles.sliderStack} key={index}>
                 <ReadMoreCard
                   key={index}

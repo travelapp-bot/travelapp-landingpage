@@ -75,8 +75,8 @@ const BlogList = () => {
           setSelectedCategories={setSelectedCategories}
           categories={blogCategories}
         />
-        <Loader />
         <Row className={styles.row}>
+        <Loader />
           {filteredCards?.map((card) => (
             <Col key={card.id} xs={12} md={6} lg={4}>
               <ReadMoreCard

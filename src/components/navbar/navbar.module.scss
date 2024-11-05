@@ -10,13 +10,15 @@
   }
 }
 
-
 .navbar {
-  transition: opacity 0.3s ease;
-  opacity: 0;
+  @media screen and (max-width: 991px) {
 
-  &.visible {
-    opacity: 1;
+    transition: opacity 0.3s ease;
+    opacity: 0;
+
+    &.visible {
+      opacity: 1;
+    }
   }
 
   .navbar-collapse {

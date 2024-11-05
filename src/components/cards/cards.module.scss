@@ -113,6 +113,12 @@
       overflow: hidden;
       text-overflow: ellipsis;
     }
+
+    .titleOverflow {
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
   }
 
   .imgStack {
@@ -125,7 +131,7 @@
     .readMoreCardImg {
       height: 100%;
       width: 100%;
-      object-fit: cover;
+      // object-fit: cover;
     }
 
     .labelStack {
