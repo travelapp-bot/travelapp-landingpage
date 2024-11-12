@@ -15,7 +15,7 @@ function Detail() {
     const { id } = useParams();
     const Travelblogs = useSelector(blogs);
     const blog = Travelblogs?.find(blog => blog?.id === id)
-    console.log(blog);
+    // console.log(blog);
 
     const getLabelStyles = (index) => {
         switch (index) {
@@ -46,15 +46,16 @@ function Detail() {
         dispatch(getAllBlogs())
     }, [id, dispatch])
 
-    console.log(id)
+    // console.log(id)
 
     return (
         <main className={styles.main}>
+            {
+                blog? 
             <Container >
-                <Loader />
                 <div className={styles.subContainer}>
                     <div>
-                        <h1 className='title48'>{blog?.title}</h1>
+                        <h1 className='title48'>{blog?.title} </h1>
                         <div className={styles.stack}>
                             <p className='desc24'>{convertSecondsToDate(blog?.createDate?.seconds)}</p>
                             <div className={styles.labelStack}>
@@ -71,6 +72,9 @@ function Detail() {
                     />
                 </div>
             </Container>
+            :
+            <Loader show="true" />
+            }
         </main>
     )
 }

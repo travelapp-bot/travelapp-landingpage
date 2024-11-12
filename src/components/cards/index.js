@@ -115,10 +115,10 @@ export const ReadMoreCard = ({
       style={{ backgroundColor: cardBg }}
     >
       <div className={styles.readMoreContent}>
-        <h1 className="title24">{title}</h1>
+        <h1 className="title24">{title} 123</h1>
         <p className={classNames("desc16", styles.ellipse)}>{extractParagraphSnippet(desc)}</p>
         <div className={styles.dateStack}>
-          <p className={classNames("desc16", styles.date)}>{date}</p>
+          <p className={classNames("desc16", styles.date)}>Date: {date}</p>
           {divider && <div className={styles.line} />}
           {href && (
             <IconButton

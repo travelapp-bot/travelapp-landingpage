@@ -13,6 +13,11 @@ import instagram from "./assets/icon/instagram.svg";
 import x from "./assets/icon/x.svg";
 import youtube from "./assets/icon/youtube.svg";
 
+import tripImg4 from "./assets/images/nautre-1.jpg";
+import tripImg2 from "./assets/images/trip-2.jpg";
+import tripImg3 from "./assets/images/trip-3.webp";
+import tripImg1 from "./assets/images/dubai.jpg";
+
 const data = {
   website: {
     name: "Travel.ai",
@@ -161,10 +166,19 @@ const data = {
     social: {
       title:"Tag us on your trips",
       description: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text",
-        hashtags: ["#JOINTRAVELAI","#AITRAVELS"]
+      hashtags: ["#JOINTRAVELAI","#AITRAVELS"],
+      tripImages:[tripImg1,tripImg2,tripImg3,tripImg4]
+
     },
     footer: {
       text: "© 2024 Travel.ai by TCB"
+    },
+    modal:{
+      heading:'Join our wait list',
+      description:"Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+      buttonTxt:'Join Waitlist',
+      successTitle:'Thank you for joining the waitlist! We’ll be in touch soon.',
+      successbutton:'Close'
     }
   }
 };

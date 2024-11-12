@@ -1,10 +1,6 @@
 "use client";
 import classNames from "classnames";
 import Image from "next/image";
-import tripImg4 from "../../assets/images/nautre-1.jpg";
-import tripImg2 from "../../assets/images/trip-2.jpg";
-import tripImg3 from "../../assets/images/trip-3.webp";
-import tripImg1 from "../../assets/images/trip1.svg";
 import AppButton, { IconButton } from "../buttons";
 import styles from "./trips.module.scss";
 import { useDispatch } from "react-redux";
@@ -25,7 +21,7 @@ const Trips = () => {
   const dispatch = useDispatch();
   const [expandedIndex, setExpandedIndex] = useState(0);
 
-  const images = [tripImg4, tripImg2, tripImg3, tripImg1];
+  const images = data?.website.social.tripImages
   
   useEffect(() => {
     const timer = setInterval(() => {

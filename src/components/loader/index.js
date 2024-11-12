@@ -1,14 +1,14 @@
 "use client"
 
-import React from 'react'
+import React, { useState } from 'react'
 import { Oval } from 'react-loader-spinner'
 import { useSelector } from 'react-redux'
 
-function Loader() {
-    const loading = useSelector(state => state?.loader?.open)
+function Loader({state}) {
+    
     return (
         <>
-            {loading &&
+            
                 <div className="loader-wrapper">
                     <Oval
                         height={50}
@@ -17,11 +17,11 @@ function Loader() {
                         color="grey"
                         secondaryColor='#A9A9A9'
                         ariaLabel="ball-triangle-loading"
-                        visible={loading}
+                        visible={state}
                     
                     />
                 </div>
-            }
+            
         </>
 
     )

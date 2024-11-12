@@ -12,8 +12,12 @@ import { category } from "@/redux/blog.slice";
 import { convertSecondsToDate } from "@/constant";
 import Loader from "../loader";
 
-const MultiSelectButtons = ({ selectedCategories, setSelectedCategories, categories }) => {
-  console.log(categories)
+const MultiSelectButtons = ({
+  selectedCategories,
+  setSelectedCategories,
+  categories,
+}) => {
+  console.log(categories);
   const toggleCategory = (categoryId) => {
     if (categoryId === "BB4EIB82pA0yKmFTLDLw") {
       setSelectedCategories(["BB4EIB82pA0yKmFTLDLw"]);
@@ -21,7 +25,10 @@ const MultiSelectButtons = ({ selectedCategories, setSelectedCategories, categor
       setSelectedCategories((prev) =>
         prev.includes(categoryId)
           ? prev.filter((cat) => cat !== categoryId)
-          : [...prev.filter((cat) => cat !== "BB4EIB82pA0yKmFTLDLw"), categoryId]
+          : [
+              ...prev.filter((cat) => cat !== "BB4EIB82pA0yKmFTLDLw"),
+              categoryId,
+            ]
       );
     }
   };
@@ -52,11 +59,11 @@ const MultiSelectButtons = ({ selectedCategories, setSelectedCategories, categor
 
 const BlogList = () => {
   const dispatch = useDispatch();
-  const allBlogs = useSelector(state => state.blog.blogs);
+  const allBlogs = useSelector((state) => state.blog.blogs);
   const blogCategories = useSelector(category);
-  const [selectedCategories, setSelectedCategories] = useState(["BB4EIB82pA0yKmFTLDLw"]);
-
-
+  const [selectedCategories, setSelectedCategories] = useState([
+    "BB4EIB82pA0yKmFTLDLw",
+  ]);
 
   useEffect(() => {
     dispatch(getAllBlogs());
@@ -69,31 +76,42 @@ const BlogList = () => {
 
   return (
     <Container>
-      <div className={styles.blogList}>
-        <MultiSelectButtons
-          selectedCategories={selectedCategories}
-          setSelectedCategories={setSelectedCategories}
-          categories={blogCategories}
-        />
-        <Loader />
-        <Row className={styles.row}>
-          {filteredCards?.map((card) => (
-            <Col key={card.id} xs={12} md={6} lg={4}>
-              <ReadMoreCard
-                title={card.title}
-                desc={card.content}
-                date={convertSecondsToDate(card?.createDate?.seconds)}
-                img={card?.imageUrl}
-                tags={card?.tags}
-                cardBg="#fff"
-                className="shadow"
-                divider
-                href={`/detail/${card.id}`}
-              />
-            </Col>
-          ))}
-        </Row>
-      </div>
+      {filteredCards.length > 0 ? (
+        <div className={styles.blogList}>
+          <MultiSelectButtons
+            selectedCategories={selectedCategories}
+            setSelectedCategories={setSelectedCategories}
+            categories={blogCategories}
+          />
+          <Row className={styles.row}>
+            {filteredCards?.map((card) => (
+              <Col key={card.id} xs={12} md={6} lg={4}>
+                <ReadMoreCard
+                  title={card.title}
+                  desc={card.content}
+                  date={
+                    card.createDate
+                      ? new Date(card.createDate).toLocaleDateString("en-GB", {
+                          day: "numeric",
+                          month: "short",
+                          year: "numeric",
+                        })
+                      : "Date not available" // Fallback if createDate is undefined or invalid
+                  }
+                  img={card?.imageUrl}
+                  tags={card?.tags}
+                  cardBg="#fff"
+                  className="shadow"
+                  divider
+                  href={`/detail/${card.id}`}
+                />
+              </Col>
+            ))}
+          </Row>
+        </div>
+      ) : (
+        <Loader show={true} />
+      )}
     </Container>
   );
 };

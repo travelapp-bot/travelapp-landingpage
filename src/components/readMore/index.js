@@ -79,9 +79,18 @@ const ReadMore = () => {
                   key={index}
                   title={blog.title}
                   desc={blog?.content}
-                  date={blog?.date}
+                  // date={blog?.date}
                   img={blog.imageUrl}
                   tags={blog.tags}
+                  date={
+                    blog?.createDate
+                      ? new Date(blog?.createDate).toLocaleDateString("en-GB", {
+                          day: "numeric",
+                          month: "short",
+                          year: "numeric"
+                        })
+                      : "Date not available" // Fallback if createDate is undefined or invalid
+                  }
                 />
               </div>
             ))}

@@ -31,7 +31,7 @@ export default function RootLayout({ children }) {
   return (
     <StoreProvider>
       <html lang="en">
-        <body className={poppins.className}>
+        <body className={poppins.className} style={{padding:'0px !important'}}>
           <div className="main-layout">
             <AppNavbar />
             {children}

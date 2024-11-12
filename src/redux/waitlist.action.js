@@ -12,7 +12,7 @@ export const waitlistAction = createAsyncThunk(
             const docRef = doc(db, "clients", formData.email);
 
             await setDoc(docRef, formData);
-            dispatch(ModalToggle(false));
+            // dispatch(ModalToggle(false));
 
             console.log("Form data successfully submitted to Firebase");
 
