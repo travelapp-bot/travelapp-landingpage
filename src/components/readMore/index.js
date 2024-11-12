@@ -2,7 +2,6 @@
 import Image from "next/image";
 import { Col, Container, Row } from "react-bootstrap";
 import starsG from "../../assets/icon/starsG.svg";
-
 import { ReadMoreCard } from "../cards";
 import styles from "./readMore.module.scss";
 import Slider from "react-slick";
@@ -10,6 +9,7 @@ import data from '../../content';
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
 import { getAllBlogs } from "@/redux/blog.action";
+import { convertSecondsToDate } from "@/constant";
 
 const ReadMore = () => {
 
@@ -73,7 +73,7 @@ const ReadMore = () => {
         </Row>
         <div className={styles.cardStack}>
           <Slider {...settings}>
-            {blogs?.map((blog, index) => (
+            {blogs?.slice(0,7).map((blog, index) => (
               <div className={styles.sliderStack} key={index}>
                 <ReadMoreCard
                   key={index}

@@ -10,13 +10,16 @@
   }
 }
 
-
 .navbar {
   // transition: opacity 0.3s ease;
   opacity: 1;
 
-  &.visible {
-    opacity: 1;
+    transition: opacity 0.3s ease;
+    opacity: 0;
+
+    &.visible {
+      opacity: 1;
+    }
   }
 
   .navbar-collapse {
