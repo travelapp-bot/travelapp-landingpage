@@ -2,20 +2,22 @@
 import React, { useEffect } from 'react'
 import styles from "./detail.module.scss"
 import { Container, Stack } from 'react-bootstrap'
-
+// import { useRouter } from 'next/router';
 import { useParams } from 'next/navigation';
-import { getAllBlogs } from "@/redux/blog.action";
+import { getBlogById } from "@/redux/blog.action";
 import { useDispatch, useSelector } from 'react-redux'
 import { blogs } from '@/redux/blog.slice'
 import { convertSecondsToDate } from "@/constant";
+import data_icon from '../../assets/icon/data_icon.svg'
 import Loader from '@/components/loader';
+import Image from 'next/image';
 
 function Detail() {
     const dispatch = useDispatch();
     const { id } = useParams();
     const Travelblogs = useSelector(blogs);
     const blog = Travelblogs?.find(blog => blog?.id === id)
-    // console.log(blog);
+    console.log(blog,'check blog');
 
     const getLabelStyles = (index) => {
         switch (index) {
@@ -43,7 +45,7 @@ function Detail() {
     };
 
     useEffect(() => {
-        dispatch(getAllBlogs())
+        dispatch(getBlogById(id));
     }, [id, dispatch])
 
     // console.log(id)
@@ -57,7 +59,20 @@ function Detail() {
                     <div>
                         <h1 className='title48'>{blog?.title} </h1>
                         <div className={styles.stack}>
-                            <p className='desc24'>{convertSecondsToDate(blog?.createDate?.seconds)}</p>
+                            <div className={styles.dateBox}>
+                            <Image src={data_icon} alt={blog?.createDate?.seconds} width={18} height={18} />
+                            <p className='desc16'>{
+                             blog?.createDate 
+                             ? new Date(blog?.createDate).toLocaleDateString("en-GB", {
+                                 day: "numeric",
+                                 month: "short",
+                                 year: "numeric",
+                               })
+                             : "Date not available" // Fallback if createDate is undefined or invalid
+                            }
+                            </p>
+                            </div>
+                            <div className={styles.verticalLine}>|</div>
                             <div className={styles.labelStack}>
                                 {blog?.tags?.map((option, ind) => (
                                     <p className={styles.label} key={ind} style={getLabelStyles(ind)}>

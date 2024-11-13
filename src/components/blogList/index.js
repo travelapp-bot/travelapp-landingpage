@@ -11,6 +11,7 @@ import { getAllBlogs, getCategories } from "@/redux/blog.action";
 import { category } from "@/redux/blog.slice";
 import { convertSecondsToDate } from "@/constant";
 import Loader from "../loader";
+import Link from "next/link";
 
 const MultiSelectButtons = ({
   selectedCategories,
@@ -86,6 +87,7 @@ const BlogList = () => {
           <Row className={styles.row}>
             {filteredCards?.map((card) => (
               <Col key={card.id} xs={12} md={6} lg={4}>
+      
                 <ReadMoreCard
                   title={card.title}
                   desc={card.content}

@@ -5,7 +5,7 @@ import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import AppButton from "../buttons";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faBars } from '@fortawesome/free-solid-svg-icons';
+import { faBars, faTimes } from '@fortawesome/free-solid-svg-icons';
 import { useDispatch } from "react-redux";
 import { ModalToggle } from "../../redux/waitlist.slice";
 import styles from "./navbar.module.scss";
@@ -17,6 +17,7 @@ const AppNavbar = () => {
   const dispatch = useDispatch();
   const [isExpanded, setIsExpanded] = useState(false);
   const [isVisible, setIsVisible] = useState(false);
+  const [iconExpanded, setIconExpanded] = useState(false);
 
   const openModal = () => {
     dispatch(ModalToggle(true));
@@ -32,6 +33,11 @@ const AppNavbar = () => {
   const handleLinkClick = () => {
     setIsExpanded(false);
   };
+  
+
+  const handleToggle = () => {
+    setIconExpanded(!iconExpanded);
+  };
 
   return (
     <Navbar
@@ -42,8 +48,9 @@ const AppNavbar = () => {
     >
       <Container fluid>
         <Navbar.Brand >Travel.ai</Navbar.Brand>
-        <Navbar.Toggle style={{ border: 'none' }} aria-controls="navbarScroll">
-          <FontAwesomeIcon className="hamburger" icon={faBars} />
+        <Navbar.Toggle style={{ border: 'none' }} aria-controls="navbarScroll" onClick={handleToggle}>
+          <FontAwesomeIcon className="hamburger"
+           icon={isExpanded ? faTimes : faBars} />
         </Navbar.Toggle>
         <Navbar.Collapse id="navbarScroll" className={styles.navbarCollapse}>
           <Nav className="mx-auto my-2 my-lg-0">

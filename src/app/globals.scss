@@ -183,14 +183,15 @@ p {
   background: var(--background);
   top: 0;
   left: 0;
-  padding: 2.5rem 0;
+  padding: 20px 0;
   z-index: 3;
 
   .container-fluid {
     .navbar-brand {
-      font-size: 3rem;
+      font-size: 40px;
+      line-height: 40px;
       font-weight: 500;
-      line-height: 140%;
+      // line-height: 140%;
       color: var(--foreground);
       padding: 0;
     }
@@ -554,6 +555,6 @@ p {
   display: flex;
   justify-content: center;
   align-items: center;
-  background: rgba(0, 0, 0, 0.5); 
+  // background: rgba(0, 0, 0, 0.5); 
   z-index: 9999;
 }

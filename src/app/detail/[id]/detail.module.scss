@@ -1,5 +1,5 @@
 .main {
-    padding-top: 9.75rem;
+    padding-top: 12rem;
     padding-bottom: 2rem;
     overflow-x: hidden;
     display: flex;
@@ -9,7 +9,8 @@
     .subContainer {
         display: flex;
         flex-direction: column;
-        gap: 3rem;
+        gap: 1rem;
+        margin-bottom: 2rem;
 
         @media screen and (max-width : 768px) {
             align-items: center;
@@ -21,11 +22,23 @@
             flex-direction: row;
             gap: 1rem;
             align-items: center;
+            padding: 12px 0px;
+            border-bottom: 1px solid #d5d5d5;
 
             @media screen and (max-width : 600px) {
                 flex-direction: column;
             }
 
+            .dateBox{
+                display: flex;
+                flex-direction: row;
+                gap: .4rem; 
+            }
+            .verticalLine{
+                border-right: 2px solid #d5d5d5;
+                height: auto;
+                color: transparent;
+            }
             .labelStack {
                 display: flex;
                 align-items: center;

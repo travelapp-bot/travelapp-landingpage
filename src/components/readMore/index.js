@@ -8,16 +8,18 @@ import Slider from "react-slick";
 import data from '../../content';
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
-import { getAllBlogs } from "@/redux/blog.action";
+import { getSevenBlogs } from "@/redux/blog.action";
 import { convertSecondsToDate } from "@/constant";
 
 const ReadMore = () => {
 
   const dispatch = useDispatch()
   const { blogs } = useSelector((state) => state.blog);
+  const colors = ["#E0FBE7", "#F3FBE0", "#E0EDFB", "#FBE0E3", "#E0FBF5", "#FBEDE0", "#E8E0FB"];
+
 
   useEffect(() => {
-    dispatch(getAllBlogs())
+    dispatch(getSevenBlogs())
   }, [])
 
   var settings = {
@@ -53,6 +55,9 @@ const ReadMore = () => {
       },
     ],
   };
+
+
+
   return (
     <div className={styles.readMore}>
       <Container>
@@ -73,7 +78,7 @@ const ReadMore = () => {
         </Row>
         <div className={styles.cardStack}>
           <Slider {...settings}>
-            {blogs?.slice(0,7).map((blog, index) => (
+          {blogs?.slice(0, 7).map((blog, index) => (
               <div className={styles.sliderStack} key={index}>
                 <ReadMoreCard
                   key={index}
@@ -91,6 +96,7 @@ const ReadMore = () => {
                         })
                       : "Date not available" // Fallback if createDate is undefined or invalid
                   }
+                  cardBg={colors[index % colors.length]} // Assign background color based on index
                 />
               </div>
             ))}
