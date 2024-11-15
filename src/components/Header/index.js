@@ -20,7 +20,7 @@ const Header = () => {
 
   const openModal = () => {
     dispatch(ModalToggle(true))
-    console.log("open modal")
+    // console.log("open modal")
   }
   return (
     <div className={styles.header}>

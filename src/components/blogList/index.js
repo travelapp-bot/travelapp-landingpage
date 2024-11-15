@@ -18,7 +18,7 @@ const MultiSelectButtons = ({
   setSelectedCategories,
   categories,
 }) => {
-  console.log(categories);
+  // console.log(categories);
   const toggleCategory = (categoryId) => {
     if (categoryId === "BB4EIB82pA0yKmFTLDLw") {
       setSelectedCategories(["BB4EIB82pA0yKmFTLDLw"]);

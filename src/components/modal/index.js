@@ -7,15 +7,17 @@ import Row from "react-bootstrap/Row";
 import AppButton from "../buttons";
 import Image from "next/image";
 import email from "../../assets/images/email.png";
-import success from '../../assets/images/success.svg'
+import success from "../../assets/images/success.svg";
 import { useDispatch, useSelector } from "react-redux";
 import { waitlistAction } from "../../redux/waitlist.action";
 import { ModalToggle } from "../../redux/waitlist.slice";
 import data from "../../content";
+import './style.css'
 
 const AppModal = () => {
   const [validated, setValidated] = useState(false);
   const [showSuccessMessage, setShowSuccessMessage] = useState(false); // State to manage success message
+  const [loading, setLoading] = useState(false);
 
   const [formData, setFormData] = useState({
     name: "",
@@ -37,24 +39,32 @@ const AppModal = () => {
   const handleSubmit = async (event) => {
     event.preventDefault();
     const form = event.currentTarget;
+
     if (!formData.email) {
       // If email is empty, prevent form submission and show validation
       event.stopPropagation();
       setValidated(true);
     } else {
       setValidated(false);
-      await dispatch(waitlistAction(formData));
-      setFormData({
-        name: "",
-        username: "",
-        email: "",
-      });
-      setShowSuccessMessage(true); // Show success message
-      // Hide the success message after 3 seconds
-      setTimeout(() => {
-        setShowSuccessMessage(false);
-        dispatch(ModalToggle(false)); // Close the modal after the success message is shown
-      }, 3000); // Adjust the delay time as needed
+      setLoading(true); // Set loading state to true
+      try {
+        await dispatch(waitlistAction(formData));
+        setFormData({
+          name: "",
+          username: "",
+          email: "",
+        });
+        setShowSuccessMessage(true); // Show success message
+        // Hide the success message after 3 seconds
+        setTimeout(() => {
+          setShowSuccessMessage(false);
+          dispatch(ModalToggle(false)); // Close the modal after the success message is shown
+        }, 7000); // Adjust the delay time as needed
+      } catch (error) {
+        console.error("Error during form submission", error);
+      } finally {
+        setLoading(false); // Reset loading state
+      }
     }
   };
 
@@ -80,11 +90,18 @@ const AppModal = () => {
     >
       <Modal.Header closeButton></Modal.Header>
       <Modal.Body>
-        <Image src={showSuccessMessage ? success : email} alt="Join our waitlist" className="modal-img" />
+        <Image
+          src={showSuccessMessage ? success : email}
+          alt="Join our waitlist"
+          className="modal-img"
+        />
         {showSuccessMessage ? (
-          <div className="modal-title-stack"  >
+          <div className="modal-title-stack">
             <h1>{data.website.modal.successTitle}</h1>
-            <AppButton onClick={handleClose} style={{margin:"40px auto 10px", minWidth:'150px'}} >
+            <AppButton
+              onClick={handleClose}
+              style={{ margin: "40px auto 10px", minWidth: "150px" }}
+            >
               {data.website.modal.successbutton}
             </AppButton>
           </div>
@@ -132,8 +149,17 @@ const AppModal = () => {
                   </Form.Control.Feedback>
                 </Form.Group>
               </Row>
-              <AppButton className="modal-btn" onClick={handleSubmit}>
-                {data.website.modal.buttonTxt}
+
+              <AppButton
+                className="modal-btn"
+                onClick={handleSubmit}
+                disabled={loading} // Disable the button while loading
+              >
+                {loading ? (
+                  <span className="loader"></span> // Replace with your loader component or text
+                ) : (
+                  data.website.modal.buttonTxt
+                )}
               </AppButton>
             </Form>
           </>

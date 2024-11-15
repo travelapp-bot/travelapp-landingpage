@@ -43,7 +43,7 @@ export const WishlistCard = () => {
     <div className={styles.wishlistCard}>
       <div className={styles.wishlistCardContent}>
         <h1>
-          Join the <br /> wish list
+          Join the <br /> wait list
         </h1>
         <Image
           src={arrowR}
@@ -54,7 +54,7 @@ export const WishlistCard = () => {
       </div>
       <Image
         src={wishlist}
-        alt="Join the wish list"
+        alt="Join the wait list"
         className={styles.wishlistCardImg}
       />
     </div>

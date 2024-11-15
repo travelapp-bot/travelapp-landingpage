@@ -27,7 +27,7 @@ export const getAllBlogs = createAsyncThunk(
               dispatch(setAllBlog(documents));
             }
             dispatch(setloader(false));
-            console.log(documents);
+            // console.log(documents);
             return documents;
 
           } catch (e) {
@@ -95,7 +95,7 @@ export const getBlogById = createAsyncThunk(
                   if (data.createDate instanceof Timestamp) {
                       data.createDate = data.createDate.toDate().toISOString();
                   }
-                  documents = [{ id: blogDoc.id, ...data }];
+                  documents = [{ id: blogDoc.id,  alt: data.title || "Blog image", ...data }];
               } else {
                   console.error("Blog not found with id:", id);
               }
@@ -107,7 +107,7 @@ export const getBlogById = createAsyncThunk(
                   if (data.createDate instanceof Timestamp) {
                       data.createDate = data.createDate.toDate().toISOString();
                   }
-                  return { id: doc.id, ...data };
+                  return { id: doc.id,   alt: data.title || "Blog image", ...data };
               });
           }
 
@@ -130,15 +130,15 @@ export const getCategories = createAsyncThunk(
     async (_, { dispatch }) => {
         try {
             const querySnapshot = await getDocs(collection(db, "categories"));
-            console.log("Query Snapshot:", querySnapshot);
+            // console.log("Query Snapshot:", querySnapshot);
             const documents = querySnapshot.docs.map((doc) => ({
                 id: doc.id,
                 ...doc.data(),
             }));
 
-            console.log("Retrieved Documents:", documents);
+            // console.log("Retrieved Documents:", documents);
             if (documents) {
-                console.log(documents)
+                // console.log(documents)
                 dispatch(setCategory(documents));
             }
 

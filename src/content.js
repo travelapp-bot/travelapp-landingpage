@@ -25,7 +25,7 @@ const data = {
     description: "Plan unforgettable journeys tailored to your preferences, powered by intelligent algorithms for a seamless travel experience.",
     cta_buttons: [
       {
-        text: "Join Waitlist",
+        text: "Join Wait list",
         link: "#"
       },
     ],
@@ -176,8 +176,8 @@ const data = {
     modal:{
       heading:'Join our wait list',
       description:"Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
-      buttonTxt:'Join Waitlist',
-      successTitle:'Thank you for joining the waitlist! We’ll be in touch soon.',
+      buttonTxt:'Join Wait list',
+      successTitle:'Thank you for joining the wait list! We’ll be in touch soon.',
       successbutton:'Close'
     }
   }

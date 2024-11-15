@@ -17,7 +17,7 @@ function Detail() {
     const { id } = useParams();
     const Travelblogs = useSelector(blogs);
     const blog = Travelblogs?.find(blog => blog?.id === id)
-    console.log(blog,'check blog');
+    // console.log(blog,'check blog');
 
     const getLabelStyles = (index) => {
         switch (index) {
