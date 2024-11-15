@@ -45,7 +45,7 @@ const Header = () => {
               </AppButton>
               <div className={styles.socialBtnsStack}>
                 <span>
-                  Explore <br /> with us
+                  Explore with us
                 </span>
                 <div className={styles.socialBtns}>
                   {data.website.social_btn.map((button, index) => (

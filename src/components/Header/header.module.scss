@@ -3,7 +3,9 @@
   border-radius: 1.5rem;
   background-color: var(--success-dark);
   color: var(--background);
-
+  @media screen and (max-width: 575.9px) {
+    padding: 3rem 3rem;
+  }
   .row {
     justify-content: space-between;
     align-items: center;
@@ -47,6 +49,11 @@
           max-width: 100%;
           margin-bottom: 3rem;
         }
+        @media screen and (max-width: 575.9px) {
+          margin-top: 0px;
+        font-size: 1.6rem;
+
+        }
       }
 
       .btnStack {
@@ -55,8 +62,12 @@
         gap: 2rem;
 
         @media screen and (max-width: 767.9px) {
-          flex-direction: column;
+          // flex-direction: column;
           justify-content: center;
+        }
+        @media screen and (max-width: 575.9px) {
+          flex-direction: column;
+
         }
 
         .socialBtnsStack {
@@ -64,12 +75,24 @@
           align-items: center;
           gap: 1rem;
           font-size: 1.4rem;
-
+          
+          
           @media screen and (max-width: 767.9px) {
-            flex-direction: column;
+            // flex-direction: column;
             font-size: 15px;
           }
+          @media screen and (max-width: 575.9px) {
+           flex-direction: column;
+          }
+          
+          span{
+            width:60px;
+            @media screen and (max-width: 575.9px) {
+              width: 100%;
+            }
 
+          }
+          
           .socialBtns {
             display: flex;
             gap: 1rem;
@@ -109,7 +132,7 @@
         height: auto;
         width: 100%;
         @media screen and (max-width: 767.9px) {
-          width: 70%;
+          width: 45%;
         }
       }
     }

@@ -10,6 +10,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
 import { getSevenBlogs } from "@/redux/blog.action";
 import { convertSecondsToDate } from "@/constant";
+import classNames from "classnames";
 
 const ReadMore = () => {
 
@@ -27,9 +28,11 @@ const ReadMore = () => {
     infinite: true,
     slidesToShow: 2.5,
     slidesToScroll: 1,
+    centerMode: false,
+    initialSlide: 1,
     // autoplay: true,
     // autoplaySpeed: 2000,
-    rtl: true,
+    // ltr: true,
     responsive: [
       {
         breakpoint: 1024,
@@ -39,9 +42,16 @@ const ReadMore = () => {
         },
       },
       {
-        breakpoint: 767.9,
+        breakpoint: 991,
         settings: {
           slidesToShow: 1.5,
+          slidesToScroll: 1,
+        },
+      },
+      {
+        breakpoint: 767.9,
+        settings: {
+          slidesToShow: 1.2,
           slidesToScroll: 1,
         },
       },
@@ -51,6 +61,8 @@ const ReadMore = () => {
           slidesToShow: 1,
           slidesToScroll: 1,
           dots: true,
+          swipeToSlide: true, // Enable swipe-to-slide functionality
+          arrows: false, // Default to show arrows
         },
       },
     ],
@@ -60,17 +72,17 @@ const ReadMore = () => {
 
   return (
     <div className={styles.readMore}>
-      <Container>
+      <Container >
         <Image
           src={starsG}
           alt="Everything you need for your next adventure"
           className={styles.starsImg}
         />
-        <Row className="align-items-center">
-          <Col xs={12} md={4}>
+        <Row className={classNames(styles.headingStack,"align-items-end")}>
+          <Col xs={12} md={5}>
             <h1 className="title64">{data.website.read_more.title}</h1>
           </Col>
-          <Col xs={12} md={8}>
+          <Col xs={12} md={7}>
             <p className="desc28">
               {data.website.read_more.description}
             </p>
@@ -78,7 +90,7 @@ const ReadMore = () => {
         </Row>
         <div className={styles.cardStack}>
           <Slider {...settings}>
-          {blogs?.slice(0, 7).map((blog, index) => (
+          {blogs?.map((blog, index) => (
               <div className={styles.sliderStack} key={index}>
                 <ReadMoreCard
                   key={index}

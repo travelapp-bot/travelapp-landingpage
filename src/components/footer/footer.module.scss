@@ -2,6 +2,10 @@
     padding-top: 6.875rem;
     padding-bottom: 6.875rem;
     background-color: var(--success-light);
+    @media screen and (max-width: 575.9px) {
+      padding-top: 50px;
+    padding-bottom: 50px;
+    }
   .stack {
     justify-content: space-between;
     align-items: center;

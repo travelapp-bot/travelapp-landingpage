@@ -1,15 +1,44 @@
 .readMore {
-  padding-top: 9rem;
-  padding-bottom: 11.25rem;
+  padding-top: 10rem;
+  padding-bottom: 12rem;
+  @media screen and (max-width: 991px) {
+    padding-top: 7rem;
+    padding-bottom: 7rem;
+  }
+  @media screen and (max-width: 767.9px) {
+    text-align: center;
+  }
   .starsImg {
     height: auto;
     width: 3.5rem;
     object-fit: contain;
   }
-  @media screen and (max-width: 767.9px) {
-    text-align: center;
+  .headingStack{
+    row-gap: 1.6rem;
+    >div h1 {
+      @media screen and (max-width: 767.9px) {
+        font-size: 3rem;
+        line-height: 4rem;
+      }
+      @media screen and (max-width: 575.9px) {
+        font-size: 2.4rem;
+        line-height: 3.2rem;
+    }
+    }
+    >div p {
+      @media screen and (max-width: 767.9px) {
+        font-size: 1.5rem;
+        line-height: 2.4rem;
+      }
+      @media screen and (max-width: 575.9px) {
+        font-size: 16px;
+        line-height: normal;
+      }
+    }
+
   }
   .cardStack {
+    margin-top: 4rem;
     // width: 100%;
     // max-width: 1900px;
     // margin-top: 5rem;
@@ -18,6 +47,9 @@
     // background-color: red;
     .sliderStack {
       padding: 1.5rem;
+      @media screen and (max-width: 575.9px) {
+        padding: 0px 15px;
+      }
     }
   }
 }

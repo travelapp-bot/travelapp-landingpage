@@ -123,7 +123,7 @@ const data = {
       ]
     },
     read_more:{
-      title:"Read more",
+      title:"Read about traveling",
       description: "Lorem Ipsum is simply dummy text of the printing and typesetting.",
     },
     blogs:[

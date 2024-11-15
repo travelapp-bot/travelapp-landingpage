@@ -1,12 +1,31 @@
 .roadmap {
   position: relative;
 
+  .edgeRows{
+    margin: 80px 0px;
+    // @media screen and (max-width: 991px) {
+    //   margin: 60px 0px;
+    // }
+    @media screen and (max-width: 767.9px) {
+        margin: 60px 0px;
+    }
+  }
   .row {
     justify-content: space-between;
     align-items: center;
+    @media screen and (max-width: 575.9px) {
+      gap: 2rem;
+      
+    }
 
-    @media screen and (max-width: 767.9px) {
-      margin-bottom: 2rem;
+    h1{
+      font-size: 2.4rem;
+      line-height: 3.5rem;
+    }
+    
+    p{
+      font-size: 1.4rem;
+      line-height: 2rem;
     }
 
     .contentNoBackground {
@@ -18,13 +37,25 @@
 
       @media screen and (max-width: 575.9px) {
         text-align: center;
+        row-gap: 1rem;
+      }
 
+      >div{
+        @media screen and (max-width: 767.9px) {
+          flex-direction: column-reverse;
+          gap: 0px;
+        }
       }
 
       .travelBag {
         width: 22%;
         height: auto;
+        @media screen and (max-width: 575.9px) {
+          display: none; 
+        }
       }
+
+
     }
 
     .content {
@@ -35,15 +66,28 @@
       position: relative;
       z-index: 2;
 
+      
       @media screen and (max-width: 575.9px) {
         text-align: center;
+        row-gap: 1rem;
       }
     }
 
     .banner {
       height: auto;
       width: 100%;
+      
+      &.addShadow{
+        box-shadow: 0px 16px 37px -13px rgba(24, 39, 75, 0.12), 0px 25px 87px -8px rgba(24, 39, 75, 0.12);
+      border-radius: 40px;
+      @media screen and (max-width: 575.9px) {
+       width: 70%;
+       display: flex;
+       align-items: center;
+      }
+      }
     }
+
   }
 
   .pathSvg {

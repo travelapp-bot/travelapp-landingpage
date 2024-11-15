@@ -94,6 +94,7 @@ import roadmap3 from "../../assets/images/All-your-trip-plans-in-one-place.svg";
 import plan from "../../assets/images/plane.png";
 import travelbag from "../../assets/images/travelbag.png"
 import styles from "./roadmap.module.scss";
+import classNames from "classnames";
 
 gsap.registerPlugin(ScrollTrigger, MotionPathPlugin);
 
@@ -146,8 +147,8 @@ const RoadMap = ({data}) => {
         <Image ref={airplaneRef} src={plan} alt="Airplane" />
       </div>
 
-      <Row className={styles.row}>
-        <Col xs={{ order: 2, span: 12 }} sm={{ order: 1, span: 6 }} md={5}>
+      <Row className={classNames(styles.row,styles.edgeRows)}>
+        <Col xs={{ order: 1, span: 12 }} sm={{ order: 1, span: 6 }} md={5}>
           <div className={styles.contentNoBackground}>
             <div className="title48Div"><h1 className="title48">{data[0].title.span1}<br/>{data[0].title.span2} </h1> <Image className={styles.travelBag} src={travelbag} alt={data[0].alt} /> 
             </div>
@@ -156,16 +157,16 @@ const RoadMap = ({data}) => {
             </p>
           </div>
         </Col>
-        <Col xs={{ order: 1, span: 12 }} sm={{ order: 2, span: 6 }} md={5}>
-          <Image className={styles.banner} src={roadmap1} alt={data[0].alt} />
+        <Col xs={{ order: 2, span: 12 }} sm={{ order: 2, span: 6 }} md={5}>
+          <Image className={classNames(styles.banner, styles.addShadow)} src={roadmap1} alt={data[0].alt} />
         </Col>
       </Row>
 
-      <Row className={styles.row}>
-        <Col xs={12} sm={6} md={6}>
+      <Row className={classNames(styles.row)}>
+        <Col xs={{ order: 2, span: 12 }} sm={6} md={6}>
           <Image className={styles.banner} src={roadmap2} alt={data[1].alt} />
         </Col>
-        <Col xs={12} sm={6} md={5}>
+        <Col xs={{ order: 1, span: 12 }} sm={6} md={5}>
           <div className={styles.content}>
             <h1 className="title48">{data[1].title.span1}<br/>{data[1].title.span2}</h1>
             <p className="desc24">
@@ -175,8 +176,8 @@ const RoadMap = ({data}) => {
         </Col>
       </Row>
 
-      <Row className={styles.row}>
-        <Col xs={{ order: 2, span: 12 }} sm={{ order: 1, span: 6 }} md={5}>
+      <Row className={classNames(styles.row,styles.edgeRows)}>
+        <Col xs={{ order: 1, span: 12 }} sm={{ order: 1, span: 6 }} md={5}>
           <div className={styles.content}>
           <h1 className="title48">{data[2].title.span1}<br/>{data[2].title.span2}</h1>
             <p className="desc24">
@@ -184,7 +185,7 @@ const RoadMap = ({data}) => {
             </p>
           </div>
         </Col>
-        <Col xs={{ order: 1, span: 12 }} sm={{ order: 2, span: 6 }} md={5}>
+        <Col xs={{ order: 2, span: 12 }} sm={{ order: 2, span: 6 }} md={5}>
           <Image className={styles.banner} src={roadmap3} alt={data[2].alt} />
         </Col>
       </Row>

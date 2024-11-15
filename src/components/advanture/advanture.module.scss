@@ -2,6 +2,16 @@
   @media screen and (max-width: 767.9px) {
     text-align: center;
   }
+  >h1{
+    @media screen and (max-width: 767.9px) {
+      font-size: 3rem;
+      line-height: 4rem;
+    }
+    @media screen and (max-width: 575.9px) {
+        font-size: 2.4rem;
+        line-height: 3.2rem;
+    }
+  }
   .starsImg{
     height: auto;
     width: 3.5rem;
@@ -11,10 +21,17 @@
     display: flex;
     flex-direction: row;
     row-gap: 5rem;
-    margin-top: 8.75rem;
-    @media screen and (max-width: 768px) {
+    margin-top: 4rem;
+    @media screen and (max-width: 991px) {
       row-gap: 2rem;
     }
+    @media screen and (max-width: 575.9px) {
+      margin-top: 2.4rem;
+    }
+
+    // @media screen and (max-width: 768px) {
+    //   row-gap: 2rem;
+    // }
     .tripImg{
       margin-left: auto;
       margin-right: -20px;

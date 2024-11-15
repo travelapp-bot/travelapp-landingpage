@@ -4,11 +4,13 @@
   border-radius: 1.5rem;
   background-color: var(--success-dark);
   color: var(--background);
+ 
   .row {
     justify-content: center;
     align-items: center;
     .content {
       text-align: center;
+      
       .starIcon {
         height: 57px;
         width: 57px;
