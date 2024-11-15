@@ -157,16 +157,16 @@ const RoadMap = ({data}) => {
             </p>
           </div>
         </Col>
-        <Col xs={{ order: 2, span: 12 }} sm={{ order: 2, span: 6 }} md={5}>
+        <Col xs={{ order: 2, span: 12 }} sm={{ order: 2, span: 6 }} md={5} className={styles.mobileBannerone}>
           <Image className={classNames(styles.banner, styles.addShadow)} src={roadmap1} alt={data[0].alt} />
         </Col>
       </Row>
 
       <Row className={classNames(styles.row)}>
-        <Col xs={{ order: 2, span: 12 }} sm={6} md={6}>
+        <Col xs={{ order:2, span: 12 }} sm={{ order: 1, span: 6 }} md={6}>
           <Image className={styles.banner} src={roadmap2} alt={data[1].alt} />
         </Col>
-        <Col xs={{ order: 1, span: 12 }} sm={6} md={5}>
+        <Col xs={{ order: 1, span: 12 }} sm={{ order: 2, span: 6 }} md={5}>
           <div className={styles.content}>
             <h1 className="title48">{data[1].title.span1}<br/>{data[1].title.span2}</h1>
             <p className="desc24">
